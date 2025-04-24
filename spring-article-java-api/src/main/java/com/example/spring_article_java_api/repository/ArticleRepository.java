@@ -13,7 +13,6 @@ import com.example.spring_article_java_api.entity.Article;
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Integer> {
     //基本的な保存・更新・削除などはJpaRepositoryから継承されます。
-
     //新着順取得
     List<Article> findAllByOrderByCreatedAtDesc();
 
