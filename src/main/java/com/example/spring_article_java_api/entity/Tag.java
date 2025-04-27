@@ -35,4 +35,14 @@ public class Tag  extends BaseEntity {
     @Setter
     private String tagName;
 
+    /***
+     * 初期化用コンストラクタ
+     * @param tagName
+     */
+    public Tag(String tagName){
+        //必須項目をコンストラクタで設定
+        this.tagName = tagName;
+        setCreatedAt();
+    }
+
 }

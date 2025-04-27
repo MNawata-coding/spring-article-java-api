@@ -29,4 +29,15 @@ public class ArticleTag {
     @NotNull
     @Column(name="created_at", updatable=false)
     private LocalDateTime createdAt;
+
+    /***
+     * 初期設定用コンストラクタ
+     * @param tagId
+     * @param articleId
+     */
+    public ArticleTag(int tagId, int articleId){
+        articleTagPK = new ArticleTagPK(tagId, articleId);
+        this.createdAt = LocalDateTime.now();
+    }
 }
+
