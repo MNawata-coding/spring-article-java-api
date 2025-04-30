@@ -1,6 +1,7 @@
 package com.example.spring_article_java_api.entity;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -95,7 +96,8 @@ public abstract class BaseEntity {
      * 継承先で現在時刻を設定するためのメソッド
      */
     protected void setCreatedAt(){
-        this.createdAt = LocalDateTime.now();
+        //現在時刻を設定する
+        this.createdAt = LocalDateTime.now(ZoneId.of("Asia/Tokyo"));
     }
 
     /***

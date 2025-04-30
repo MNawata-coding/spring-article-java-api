@@ -38,11 +38,15 @@ public class Tag  extends BaseEntity {
     /***
      * 初期化用コンストラクタ
      * @param tagName
+     * @param createdBY
+     * @param deleteFlg
      */
-    public Tag(String tagName){
+    public Tag(String tagName, String createdBY, boolean deleteFlg){
         //必須項目をコンストラクタで設定
         this.tagName = tagName;
         setCreatedAt();
+        changeCreatedBy(createdBY);
+        changeDeleteFlg(deleteFlg);
     }
 
 }

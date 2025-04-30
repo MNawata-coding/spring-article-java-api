@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -34,6 +35,7 @@ public class Article extends BaseEntity {
     */
     @Column(name="user_id")
     @Getter
+    @Min(0)
     private int userId;
 
     /***
@@ -59,7 +61,6 @@ public class Article extends BaseEntity {
     /***
      * ライク数
      */
-    @NotNull
     @Column(name="like_cnt")
     @Getter
     private int likeCnt;
@@ -78,7 +79,7 @@ public class Article extends BaseEntity {
     @Column(name="release_flg")
     @Getter
     @Setter
-    private Boolean releaseFlg;
+    private boolean releaseFlg;
 
     /***
      * 投稿予約日
@@ -91,11 +92,8 @@ public class Article extends BaseEntity {
      * コンストラクタ
      * 必須項目を設定する
      */
-    public Article(int userId, String title, String content, Boolean releaseFlg, String createdBy){
+    public Article(int userId, String title, String content, boolean releaseFlg, String createdBy,boolean deleteFlg){
         //必須項目をコンストラクタで設定し、漏れがないようにする。
-        //各値の整合性チェック
-        validateUserId(userId);
-
         //Entityに値を設定する
         this.userId = userId;
         this.title = title;
@@ -103,15 +101,7 @@ public class Article extends BaseEntity {
         this.releaseFlg = releaseFlg;
         changeCreatedBy(createdBy);
         setCreatedAt();
-    }
-
-    /***
-     * ユーザーID設定
-     */
-    public void changeUserId(int userId) {
-        //ユーザーIDが0よりも小さい場合
-        validateUserId(userId);
-        this.userId = userId;
+        changeDeleteFlg(deleteFlg);
     }
 
     /**
@@ -139,18 +129,6 @@ public class Article extends BaseEntity {
         //現在時刻よりも前の場合
         validateReservationDay(reservationDay);
         this.reservationDay = reservationDay;
-    }
-
-    /***
-     * ユーザーIDのチェック
-     * @param userId
-     * @exception IllegalArgumentException
-     */
-    private void validateUserId(int userId){
-        //ユーザーIDが0よりも小さい場合
-        if(userId < 0){
-            throw new IllegalArgumentException("ユーザーIDが0よりも小さいです");
-        }
     }
 
     /***

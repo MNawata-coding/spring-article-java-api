@@ -20,6 +20,5 @@ public class ArticleController {
         //サービス層を呼び出し、記事タイトルを取得
         title = articleservice.getArticleTitle(0);
         return title;
-
     }
 }

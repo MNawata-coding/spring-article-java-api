@@ -1,5 +1,7 @@
 package com.example.spring_article_java_api.entity;
 
+import com.example.spring_article_java_api.constant.EnumList.ROLE;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +25,7 @@ public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
+    @Setter
     private int id;
 
     /***
@@ -47,9 +50,27 @@ public class User extends BaseEntity {
      * 役職
      */
     @NotBlank
-    @Setter
     @Column(name="role", columnDefinition="ENUM('USER', 'ADMIN')")
+    @Setter
     @Getter
-    private String role;
+    private ROLE role;
+
+    /***
+     * 初期設定用コンストラクタ
+     * @param name
+     * @param email
+     * @param createdBy
+     * @param role
+     * @param deleteFlg
+     */
+    public User(String name,String email, String createdBy, ROLE role, boolean deleteFlg){
+        //初期設定する値を記載
+        this.name = name;
+        this.email = email;
+        this.role = role;
+        setCreatedAt();
+        changeCreatedBy(createdBy);
+        changeDeleteFlg(deleteFlg);
+    }
 
 }
