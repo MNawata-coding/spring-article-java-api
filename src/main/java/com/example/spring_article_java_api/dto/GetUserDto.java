@@ -1,6 +1,5 @@
 package com.example.spring_article_java_api.dto;
 
-
 import com.example.spring_article_java_api.constant.EnumList.ROLE;
 
 import lombok.Builder;

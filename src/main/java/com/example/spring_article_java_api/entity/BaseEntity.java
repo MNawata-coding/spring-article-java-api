@@ -3,12 +3,8 @@ package com.example.spring_article_java_api.entity;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
-import org.apache.commons.lang3.StringUtils;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +19,6 @@ public abstract class BaseEntity {
     /***
     * 作成者
     */
-    @NotBlank
     @Column(name="created_by", updatable=false, length=50)
     private String createdBy;
 
@@ -37,7 +32,6 @@ public abstract class BaseEntity {
      * 作成日
      * 処理はサービス側で行う
      */
-    @NotNull
     @Column(name="created_at", updatable=false)
     @Getter
     private LocalDateTime createdAt;
@@ -53,7 +47,6 @@ public abstract class BaseEntity {
     /***
     * 削除フラグ
     */
-    @NotNull
     @Column(name="delete_flg", columnDefinition="TINYINT(1)")
     private boolean deleteFlg;
 
@@ -71,9 +64,6 @@ public abstract class BaseEntity {
      * INSERTではNULL許容なのでここでバリデーション
      */
     protected void changeUpdatedBy(String updatedBy){
-        if(StringUtils.isBlank(updatedBy)){
-            throw new IllegalArgumentException("更新者の値が不正です");
-        }
         this.updatedBy = updatedBy;
     };
 
@@ -82,13 +72,6 @@ public abstract class BaseEntity {
      * INSERTではNULL許容なのでここでバリデーション
      */
     protected void changeUpdatedAt(LocalDateTime updatedAt){
-        //作成日よりも前の値だった場合
-        if(updatedAt == null) {
-            throw new IllegalArgumentException("更新日付の値が不正です");
-        } else if(updatedAt.isBefore(this.createdAt)){
-            //値がnullの場合(初期はNULL許容なのでアノテーションはなし)
-            throw new IllegalArgumentException("更新日が作成日よりも前に設定されています");
-        }
         this.updatedAt = updatedAt;
     }
 
@@ -96,7 +79,6 @@ public abstract class BaseEntity {
      * 継承先で現在時刻を設定するためのメソッド
      */
     protected void setCreatedAt(){
-        //現在時刻を設定する
         this.createdAt = LocalDateTime.now(ZoneId.of("Asia/Tokyo"));
     }
 

@@ -34,9 +34,17 @@ dependencies {
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation ('org.springframework.boot:spring-boot-starter-test'){
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine' // JUnit4用エンジンを除外
+	}
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// https://mvnrepository.com/artifact/com.radcortez.flyway/flyway-junit5-extension
+	testImplementation 'com.radcortez.flyway:flyway-junit5-extension:2.1.0'
+	// https://mvnrepository.com/artifact/org.mockito/mockito-core
+	testImplementation 'org.mockito:mockito-core:5.17.0'
+	// https://mvnrepository.com/artifact/org.dbunit/dbunit
+	testImplementation 'org.dbunit:dbunit:3.0.0'
 }
 
 tasks.named('test') {

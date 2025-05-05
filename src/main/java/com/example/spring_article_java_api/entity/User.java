@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Getter
 @NoArgsConstructor
 @Table(name="users")
 public class User extends BaseEntity {
@@ -25,7 +26,6 @@ public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
-    @Setter
     private int id;
 
     /***
@@ -34,7 +34,6 @@ public class User extends BaseEntity {
     @NotBlank
     @Size(max=50)
     @Setter
-    @Getter
     private String name;
 
     /***
@@ -43,7 +42,6 @@ public class User extends BaseEntity {
     @NotBlank
     @Size(max=50)
     @Setter
-    @Getter
     private String email;
 
     /***
@@ -52,7 +50,6 @@ public class User extends BaseEntity {
     @NotBlank
     @Column(name="role", columnDefinition="ENUM('USER', 'ADMIN')")
     @Setter
-    @Getter
     private ROLE role;
 
     /***
@@ -72,5 +69,4 @@ public class User extends BaseEntity {
         changeCreatedBy(createdBy);
         changeDeleteFlg(deleteFlg);
     }
-
 }

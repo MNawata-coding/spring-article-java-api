@@ -1,0 +1,25 @@
+#dockerファイルからイメージを作成
+docker buld -t タグ名 .
+#dockerイメージからコンテナを起動
+docker run -d -p 127.0.0.1:3000:3000 イメージタグ名
+#mysql用のボリューム作成
+docker volume create ボリューム名
+#ネットワークを作成(dockerコンテナ同士をつなぐネットワーク、お互いに通信できるようになる)
+docker network create ネットワーク名
+#mysql用コンテナ作成→起動
+docker run -d `
+    --network ネットワーク名 --network-alias ネットワーク内で解釈されるエイリアス名
+    -v ボリューム名：コンテナ内のデータ保存場所`
+    -e 環境変数(mysqlのパスワードなど) `
+    イメージ名称(mysql:9.0など)
+#dockerコンテナにアクセス(mysql)
+docker exec -it <mysql-container-id> mysql -u root -p
+
+
+
+
+docker run -d --network article-network --network-alias mysql -v article-mysql:/var/lib/mysql 
+    -e MYSQL_ROOT_PASSWORD=Masashi1229 
+    -e MYSQL_DATABASE=springarticle 
+    -e MYSQL_USER_PASSWORD=Masashi1229
+    mysql:9.0

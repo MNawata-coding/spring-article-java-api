@@ -6,8 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,8 +27,6 @@ public class Tag  extends BaseEntity {
     /***
     * タグ名称
     */
-    @NotBlank
-    @Size(max=50)
     @Column(name="tagname", length=50)
     @Setter
     private String tagName;

@@ -1,7 +1,6 @@
 package com.example.spring_article_java_api.entity;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,52 +8,42 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Getter
 @Table(name="articles")
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Article extends BaseEntity {
 
     /***
      * 記事ID
      */
     @Id
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
     private int id;
 
     /***
     * ユーザーID
     */
-    @Column(name="user_id")
-    @Getter
-    @Min(0)
+    @Column(name="user_id", nullable = false)
     private int userId;
 
     /***
      * タイトル
      */
-    @NotBlank
-    @Size(max=50)
-    @Column(name="title", length=50)
-    @Getter
+    @Column(name="title", length=50, nullable = false)
     @Setter
     private String title;
 
     /***
      * 内容(本文)
      */
-    @NotBlank
-    @Size(max=255)
     @Column(name="content", length=255)
-    @Getter
     @Setter
     private String content;
 
@@ -62,22 +51,18 @@ public class Article extends BaseEntity {
      * ライク数
      */
     @Column(name="like_cnt")
-    @Getter
     private int likeCnt;
 
     /***
      * 閲覧数
      */
     @Column(name="view_cnt")
-    @Getter
     private int viewCnt;
 
     /***
      * 表示フラグ
      */
-    @NotNull
     @Column(name="release_flg")
-    @Getter
     @Setter
     private boolean releaseFlg;
 
@@ -85,7 +70,7 @@ public class Article extends BaseEntity {
      * 投稿予約日
      */
     @Column(name="reservation_day")
-    @Getter
+    @Setter
     private LocalDateTime reservationDay;
 
     /***
@@ -118,28 +103,5 @@ public class Article extends BaseEntity {
     public void addViewCnt() {
         //閲覧数をプラス1する
         this.viewCnt++;
-    }
-
-    /**
-     * 投稿予約日設定
-     * @return
-     * @exception IllegalArgumentException
-     */
-    public void changeReservationDay(LocalDateTime reservationDay) {
-        //現在時刻よりも前の場合
-        validateReservationDay(reservationDay);
-        this.reservationDay = reservationDay;
-    }
-
-    /***
-     * 予約日チェック
-     * @param reservationDay
-     * @exception IllegalArgumentException
-     */
-    private void validateReservationDay(LocalDateTime reservationDay){
-        //現在時刻よりも前の場合
-        if(reservationDay.isBefore(LocalDateTime.now(ZoneId.of("Asia/Tokyo")))){
-            throw new IllegalArgumentException("予約日が現在時刻よりも前に設定されています");
-        }
     }
 }
