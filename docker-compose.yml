@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mysql:9
+    volumes:
+      - article-mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
+      - MYSQL_DATABASE=springarticle
+
+  app:
+    image: spring-article-api
+    ports: 
+      - 127.0.0.1:8080:8080
+    environment:
+      - DB_PASS=${DB_PASS}
+      - DB_URL=${DB_URL}
+      - DB_USER=${DB_USER}
+    depends_on:
+      - mysql
+
+volumes:
+  article-mysql:
