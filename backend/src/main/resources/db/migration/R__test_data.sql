@@ -1,1 +1,0 @@
-INSERT INTO users (name, email, role, created_by, delete_flg) VALUES ('root222', 'test@test.com', 'ADMIN', 'System', '0');

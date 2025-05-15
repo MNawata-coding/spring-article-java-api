@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.4.4'
+	id 'org.springframework.boot' version '3.4.5'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -43,8 +43,15 @@ dependencies {
 	testImplementation 'com.radcortez.flyway:flyway-junit5-extension:2.1.0'
 	// https://mvnrepository.com/artifact/org.mockito/mockito-core
 	testImplementation 'org.mockito:mockito-core:5.17.0'
-	// https://mvnrepository.com/artifact/org.dbunit/dbunit
-	testImplementation 'org.dbunit:dbunit:3.0.0'
+	// https://mvnrepository.com/artifact/org.testcontainers/testcontainers
+	testImplementation 'org.testcontainers:testcontainers:1.21.0'
+	// https://mvnrepository.com/artifact/org.testcontainers/junit-jupiter
+	testImplementation 'org.testcontainers:junit-jupiter:1.21.0'
+	// https://mvnrepository.com/artifact/org.testcontainers/mysql
+	testImplementation 'org.testcontainers:mysql:1.21.0'
+	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+	testImplementation 'org.assertj:assertj-core:4.0.0-M1'
+	testImplementation 'org.assertj:assertj-db:3.0.0'
 }
 
 tasks.named('test') {

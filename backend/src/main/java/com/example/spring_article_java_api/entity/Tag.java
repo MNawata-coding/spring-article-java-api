@@ -42,7 +42,7 @@ public class Tag  extends BaseEntity {
         this.tagName = tagName;
         setCreatedAt();
         changeCreatedBy(createdBY);
-        changeDeleteFlg(deleteFlg);
+        deleteFlgRestore();
     }
 
 }

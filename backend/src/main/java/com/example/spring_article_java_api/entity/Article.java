@@ -76,17 +76,20 @@ public class Article extends BaseEntity {
     /***
      * コンストラクタ
      * 必須項目を設定する
+     * @param title
+     * @param content
+     * @param releaseFlg
+     * @param createdBy
      */
-    public Article(int userId, String title, String content, boolean releaseFlg, String createdBy,boolean deleteFlg){
+    public Article(String title, String content, boolean releaseFlg, String createdBy){
         //必須項目をコンストラクタで設定し、漏れがないようにする。
         //Entityに値を設定する
-        this.userId = userId;
         this.title = title;
         this.content = content;
         this.releaseFlg = releaseFlg;
         changeCreatedBy(createdBy);
         setCreatedAt();
-        changeDeleteFlg(deleteFlg);
+        deleteFlgRestore();
     }
 
     /**

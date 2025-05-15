@@ -5,8 +5,8 @@ create Table users (
   role ENUM('USER', 'ADMIN') NOT NULL,
   created_by varchar(50) NOT NULL,
   updated_by varchar(50),
-  created_at timestamp NOT NULL default current_timestamp,
-  updated_at timestamp default current_timestamp ON UPDATE current_timestamp,
+  created_at timestamp(5) NOT NULL default current_timestamp(5),
+  updated_at timestamp(5) default current_timestamp(5) ON UPDATE current_timestamp(5),
   delete_flg boolean NOT NULL
 );
 
@@ -18,11 +18,11 @@ create Table articles (
   like_cnt int NOT NULL default 0,
   view_cnt int NOT NULL default 0,
   release_flg boolean NOT NULL,
-  reservation_day timestamp default current_timestamp,
+  reservation_day timestamp,
   created_by varchar(50) NOT NULL,
   updated_by varchar(50),
-  created_at timestamp NOT NULL default current_timestamp,
-  updated_at timestamp default current_timestamp ON UPDATE current_timestamp,
+  created_at timestamp(5) NOT NULL default current_timestamp(5),
+  updated_at timestamp(5) default current_timestamp(5) ON UPDATE current_timestamp(5),
   delete_flg TINYINT(1) NOT NULL
 );
 
@@ -31,15 +31,15 @@ create Table tags (
   tagname varchar(50) NOT NULL,
   created_by varchar(50) NOT NULL,
   updated_by varchar(50),
-  created_at timestamp NOT NULL default current_timestamp,
-  updated_at timestamp default current_timestamp ON UPDATE current_timestamp,
+  created_at timestamp(5) NOT NULL default current_timestamp(5),
+  updated_at timestamp(5) default current_timestamp(5) ON UPDATE current_timestamp(5),
   delete_flg TINYINT(1) NOT NULL
 );
 
 create Table articles_tags (
   tag_id int NOT NULL,
   article_id int NOT NULL,
-  created_at timestamp NOT NULL default current_timestamp,
+  created_at timestamp(5) NOT NULL default current_timestamp(5),
   PRIMARY KEY(tag_id, article_id),
   FOREIGN KEY(tag_id)
       REFERENCES tags(tag_id)

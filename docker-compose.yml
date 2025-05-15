@@ -1,6 +1,6 @@
 services:
   mysql:
-    image: mysql:9
+    image: mysql:8
     volumes:
       - article-mysql:/var/lib/mysql
     environment:
@@ -16,7 +16,9 @@ services:
       - DB_URL=${DB_URL}
       - DB_USER=${DB_USER}
     depends_on:
-      - mysql
+      mysql:
+        condition: service_started
+        restart: true
 
 volumes:
   article-mysql:

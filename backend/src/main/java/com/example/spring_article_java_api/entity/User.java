@@ -4,6 +4,8 @@ import com.example.spring_article_java_api.constant.EnumList.ROLE;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -47,9 +49,9 @@ public class User extends BaseEntity {
     /***
      * 役職
      */
-    @NotBlank
     @Column(name="role", columnDefinition="ENUM('USER', 'ADMIN')")
     @Setter
+    @Enumerated(EnumType.STRING)
     private ROLE role;
 
     /***
@@ -67,6 +69,6 @@ public class User extends BaseEntity {
         this.role = role;
         setCreatedAt();
         changeCreatedBy(createdBy);
-        changeDeleteFlg(deleteFlg);
+        deleteFlgRestore();
     }
 }

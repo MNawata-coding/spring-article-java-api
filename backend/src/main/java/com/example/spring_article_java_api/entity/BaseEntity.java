@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
  */
 @MappedSuperclass
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
 public abstract class BaseEntity {
     /***
     * 作成者
@@ -33,7 +34,6 @@ public abstract class BaseEntity {
      * 処理はサービス側で行う
      */
     @Column(name="created_at", updatable=false)
-    @Getter
     private LocalDateTime createdAt;
 
     /***
@@ -41,7 +41,6 @@ public abstract class BaseEntity {
      * 処理はサービス側で行う
      */
     @Column(name="updated_at")
-    @Getter
     private LocalDateTime updatedAt;
 
     /***
@@ -55,7 +54,7 @@ public abstract class BaseEntity {
      * protectedメソッドを作成し一貫性を保持
      * @param createdBy
      */
-    protected void changeCreatedBy(String createdBy){
+    public void changeCreatedBy(String createdBy){
         this.createdBy = createdBy;
     }
 
@@ -63,7 +62,7 @@ public abstract class BaseEntity {
      * 更新者を設定
      * INSERTではNULL許容なのでここでバリデーション
      */
-    protected void changeUpdatedBy(String updatedBy){
+    public void changeUpdatedBy(String updatedBy){
         this.updatedBy = updatedBy;
     };
 
@@ -71,21 +70,28 @@ public abstract class BaseEntity {
      * 更新日を設定
      * INSERTではNULL許容なのでここでバリデーション
      */
-    protected void changeUpdatedAt(LocalDateTime updatedAt){
+    public void changeUpdatedAt(LocalDateTime updatedAt){
         this.updatedAt = updatedAt;
     }
 
     /***
      * 継承先で現在時刻を設定するためのメソッド
      */
-    protected void setCreatedAt(){
+    public void setCreatedAt(){
         this.createdAt = LocalDateTime.now(ZoneId.of("Asia/Tokyo"));
     }
 
     /***
-     * 削除フラグ更新
+     * 削除フラグ更新：削除
      */
-    protected void changeDeleteFlg(boolean deleteFlg){
-        this.deleteFlg = deleteFlg;
+    public void deleteFlgDelete(){
+        this.deleteFlg = true;
+    }
+
+    /***
+     * 削除フラグ更新：リストア
+     */
+    public void deleteFlgRestore(){
+        this.deleteFlg = false;
     }
 }
