@@ -374,7 +374,7 @@ public class TagRepositoryTest {
             .isEqualTo(deleteFlg);
 
         assertThat(getTag.get().getCreatedAt()).as("作成時間")
-            .isNotNull();
+            .isEqualTo(tag.getCreatedAt());
 
     }
 }

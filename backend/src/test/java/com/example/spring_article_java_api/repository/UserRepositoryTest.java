@@ -402,19 +402,19 @@ public class UserRepositoryTest {
         assertThat(insertUser).as("個別取得")
             .isPresent();
         //期待値と同じだったら正常
-        assertThat(user.getId()).as("id")
+        assertThat(insertUser.get().getId()).as("id")
             .isEqualTo(9 + num);
-        assertThat(user.getName()).as("name")
+        assertThat(insertUser.get().getName()).as("name")
             .isEqualTo(userName);
-        assertThat(user.getEmail()).as("email")
+        assertThat(insertUser.get().getEmail()).as("email")
             .isEqualTo(email);
-        assertThat(user.getRole()).as("role")
+        assertThat(insertUser.get().getRole()).as("role")
             .isEqualTo(ROLE.USER);
-        assertThat(user.getCreatedBy()).as("createdBy")
+        assertThat(insertUser.get().getCreatedBy()).as("createdBy")
             .isEqualTo(createdBy);
-        assertThat(user.getCreatedAt()).as("createdAt")
+        assertThat(insertUser.get().getCreatedAt()).as("createdAt")
             .isEqualTo(user.getCreatedAt());
-        assertThat(user.isDeleteFlg()).as("deleteFlg")
+        assertThat(insertUser.get().isDeleteFlg()).as("deleteFlg")
             .isEqualTo(Boolean.FALSE);
     }
 }
