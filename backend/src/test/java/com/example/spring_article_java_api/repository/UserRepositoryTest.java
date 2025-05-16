@@ -36,7 +36,6 @@ public class UserRepositoryTest {
     @Autowired
     UserRepository repository;
 
-
     /***
      * flywayで初期データを投入
      */
