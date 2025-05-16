@@ -50,8 +50,6 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.testcontainers/mysql
 	testImplementation 'org.testcontainers:mysql:1.21.0'
 	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-	testImplementation 'org.assertj:assertj-core:4.0.0-M1'
-	testImplementation 'org.assertj:assertj-db:3.0.0'
 }
 
 tasks.named('test') {

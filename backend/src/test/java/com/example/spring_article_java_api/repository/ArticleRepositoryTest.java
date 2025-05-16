@@ -27,7 +27,6 @@ import com.example.spring_article_java_api.testUtils.TestUtils;
 @DataJpaTest
 public class ArticleRepositoryTest {
     
-    @Autowired
     ArticleRepository repository;
     
     //テスト実行前にmysql9のイメージを取得、コンテナを起動
@@ -35,6 +34,11 @@ public class ArticleRepositoryTest {
     @Container
     @ServiceConnection
     static final MySQLContainer<?> mysql = new MySQLContainer<>(ConstUtils.MYSQL_IMAGE);
+
+    @Autowired
+    public ArticleRepositoryTest(ArticleRepository repository){
+        this.repository = repository;
+    }
     
     /***
      * 共通データ挿入

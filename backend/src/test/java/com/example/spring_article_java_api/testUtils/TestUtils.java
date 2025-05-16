@@ -12,6 +12,8 @@ public class TestUtils {
     /***
      * 共通データ挿入
      * マスタデータなどがある場合はFlywayで初期データを挿入
+     * @param mysql
+     * @param baseLocation
      */
     public void flywayConnect(MySQLContainer<?> mysql, String baseLocation){
         //flyway用datasource変数

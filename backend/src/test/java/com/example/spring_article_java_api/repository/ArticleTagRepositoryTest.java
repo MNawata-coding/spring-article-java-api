@@ -1,6 +1,8 @@
 package com.example.spring_article_java_api.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.fail;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,6 +25,9 @@ import com.example.spring_article_java_api.entity.ArticleTag;
 import com.example.spring_article_java_api.testUtils.ConstUtils;
 import com.example.spring_article_java_api.testUtils.TestUtils;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceException;
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Testcontainers
 @DataJpaTest
@@ -32,8 +37,15 @@ public class ArticleTagRepositoryTest {
     @ServiceConnection
     static final MySQLContainer<?> mysql = new MySQLContainer<>(ConstUtils.MYSQL_IMAGE);
 
-    @Autowired
     ArticleTagRepository repository;
+
+    EntityManager manager;
+
+    @Autowired
+    private ArticleTagRepositoryTest(ArticleTagRepository repository, EntityManager manager){
+        this.repository = repository;
+        this.manager = manager;
+    }
 
     /***
      * flywayで初期データ挿入
@@ -148,6 +160,11 @@ public class ArticleTagRepositoryTest {
         ArticleTag artTag = new ArticleTag(tagId,artId);
         //保存処理
         repository.save(artTag);
+        try{
+            manager.flush();
+        } catch(PersistenceException e){
+            fail();
+        }
         //取得
         Optional<ArticleTag> insertData = repository.findById(artTag.getArticleTagPK());
         //Nullチェック
@@ -162,5 +179,21 @@ public class ArticleTagRepositoryTest {
             .isEqualTo(tagId);
         assertThat(getArt.get().getCreatedAt()).as("作成日")
             .isEqualTo(artTag.getCreatedAt());
+    }
+
+    /***
+     * 登録テスト(失敗)
+     */
+    @ParameterizedTest
+    @CsvSource({"99999, 99999", "12, 18", "13, 17", "14, 16"})
+    @DisplayName("tagid登録テスト・失敗")
+    public void insertTagIdFail(int artId, int tagId){
+        //PK設定
+        ArticleTag artTag = new ArticleTag(tagId,artId);
+        //保存処理
+        repository.save(artTag);
+        //エラー発生で成功
+        assertThatExceptionOfType(PersistenceException.class)
+            .isThrownBy(() -> manager.flush());
     }
 }

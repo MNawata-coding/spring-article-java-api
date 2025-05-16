@@ -28,12 +28,16 @@ import com.example.spring_article_java_api.testUtils.TestUtils;
 @DataJpaTest
 public class TagRepositoryTest {
 
-    @Autowired
     TagRepository repository;
     
     @Container
     @ServiceConnection
     static final MySQLContainer<?> mysql = new MySQLContainer<>(ConstUtils.MYSQL_IMAGE);
+
+    @Autowired
+    public TagRepositoryTest(TagRepository repository){
+        this.repository = repository;
+    }
     
     /***
      * flywayデータ挿入

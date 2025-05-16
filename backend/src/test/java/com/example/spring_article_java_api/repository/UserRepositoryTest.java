@@ -33,8 +33,12 @@ public class UserRepositoryTest {
     @ServiceConnection
     static final MySQLContainer<?> mysql = new MySQLContainer<>(ConstUtils.MYSQL_IMAGE);
 
-    @Autowired
     UserRepository repository;
+
+    @Autowired
+    public UserRepositoryTest(UserRepository repository){
+        this.repository = repository;
+    }
 
     /***
      * flywayで初期データを投入
@@ -225,7 +229,7 @@ public class UserRepositoryTest {
     @ParameterizedTest
     @ValueSource(ints={1,2,3,4})
     @DisplayName("名称更新テスト")
-    public void updateName(int idNum){
+     public void updateName(int idNum){
         //データ取得
         Optional<User> user = repository.findById(idNum);
         //nullチェック
@@ -270,6 +274,7 @@ public class UserRepositoryTest {
         assertThat(updateUser.get().getEmail()).as("メールアドレス")
             .isEqualTo(expects);
     }
+
     /***
      * 役職更新
      */
