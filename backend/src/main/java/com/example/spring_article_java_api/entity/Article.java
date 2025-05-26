@@ -25,7 +25,7 @@ public class Article extends BaseEntity {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     /***
     * ユーザーID
@@ -51,13 +51,13 @@ public class Article extends BaseEntity {
      * ライク数
      */
     @Column(name="like_cnt")
-    private int likeCnt;
+    private Long likeCnt;
 
     /***
      * 閲覧数
      */
     @Column(name="view_cnt")
-    private int viewCnt;
+    private Long viewCnt;
 
     /***
      * 表示フラグ
@@ -81,7 +81,7 @@ public class Article extends BaseEntity {
      * @param releaseFlg
      * @param createdBy
      */
-    public Article(String title, String content, boolean releaseFlg, String createdBy){
+    public Article(String title, String content, boolean releaseFlg, Long createdBy){
         //必須項目をコンストラクタで設定し、漏れがないようにする。
         //Entityに値を設定する
         this.title = title;
@@ -90,6 +90,8 @@ public class Article extends BaseEntity {
         changeCreatedBy(createdBy);
         setCreatedAt();
         deleteFlgRestore();
+        this.viewCnt = 0L;
+        this.likeCnt = 0L;
     }
 
     /**

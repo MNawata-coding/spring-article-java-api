@@ -22,7 +22,7 @@ public class Tag  extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="tag_id")
-    private int tagId;
+    private Long tagId;
 
     /***
     * タグ名称
@@ -37,7 +37,7 @@ public class Tag  extends BaseEntity {
      * @param createdBY
      * @param deleteFlg
      */
-    public Tag(String tagName, String createdBY, boolean deleteFlg){
+    public Tag(String tagName, Long createdBY, boolean deleteFlg){
         //必須項目をコンストラクタで設定
         this.tagName = tagName;
         setCreatedAt();

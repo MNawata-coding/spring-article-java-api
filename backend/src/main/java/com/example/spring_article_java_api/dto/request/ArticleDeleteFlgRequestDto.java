@@ -1,14 +1,14 @@
-package com.example.spring_article_java_api.dto;
+package com.example.spring_article_java_api.dto.request;
 
 import lombok.Builder;
 import lombok.Getter;
 
 /***
- * ユーザー削除用DTO
- * 削除フラグを保持する
+ * 記事削除用DTO
+ * 記事の削除フラグを保持する
  */
 @Getter
-public class UpdateUserDeleteFlgDto {
+public class ArticleDeleteFlgRequestDto {
 
     /***
      * 削除フラグ
@@ -20,7 +20,7 @@ public class UpdateUserDeleteFlgDto {
      * @param deleteFlg
      */
     @Builder
-    public UpdateUserDeleteFlgDto(boolean deleteFlg){
+    public ArticleDeleteFlgRequestDto(boolean deleteFlg){
         this.deleteFlg = deleteFlg;
     }
 }

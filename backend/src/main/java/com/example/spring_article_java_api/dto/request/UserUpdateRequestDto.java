@@ -1,4 +1,4 @@
-package com.example.spring_article_java_api.dto;
+package com.example.spring_article_java_api.dto.request;
 
 import com.example.spring_article_java_api.constant.EnumList.ROLE;
 
@@ -14,13 +14,13 @@ import lombok.Getter;
  * ユーザーの更新情報を保持
  */
 @Getter
-public class UpdateUserDto {
+public class UserUpdateRequestDto {
 
     /***
      * ユーザーID
      */
     @Min(0)
-    private final int id;
+    private final Long id;
 
     /***
      * ユーザー名
@@ -51,7 +51,7 @@ public class UpdateUserDto {
      * @param role
      */
     @Builder
-    public UpdateUserDto(int id, String name, String email, ROLE role){
+    public UserUpdateRequestDto(Long id, String name, String email, ROLE role){
         this.id = id;
         this.name = name;
         this.email = email;

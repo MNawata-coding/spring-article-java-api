@@ -21,13 +21,13 @@ public abstract class BaseEntity {
     * 作成者
     */
     @Column(name="created_by", updatable=false, length=50)
-    private String createdBy;
+    private Long createdBy;
 
     /***
     * 更新者
     */
     @Column(name="updated_by", length=50)
-    private String updatedBy;
+    private Long updatedBy;
 
     /***
      * 作成日
@@ -54,7 +54,7 @@ public abstract class BaseEntity {
      * protectedメソッドを作成し一貫性を保持
      * @param createdBy
      */
-    public void changeCreatedBy(String createdBy){
+    public void changeCreatedBy(Long createdBy){
         this.createdBy = createdBy;
     }
 
@@ -62,7 +62,7 @@ public abstract class BaseEntity {
      * 更新者を設定
      * INSERTではNULL許容なのでここでバリデーション
      */
-    public void changeUpdatedBy(String updatedBy){
+    public void changeUpdatedBy(Long updatedBy){
         this.updatedBy = updatedBy;
     };
 

@@ -68,18 +68,18 @@ public class ArticleTagRepositoryTest {
         assertThat(artTag).as("取得チェック")
             .isNotEmpty();
         //タグidを取得
-        List<Integer> tagIds = artTag.stream().map(s -> s.getArticleTagPK().getTagId()).toList();
+        List<Long> tagIds = artTag.stream().map(s -> s.getArticleTagPK().getTagId()).toList();
         //期待値を設定
-        List<Integer> expectsIds = List.of(
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9
+        List<Long> expectsIds = List.of(
+            1L,
+            2L,
+            3L,
+            4L,
+            5L,
+            6L,
+            7L,
+            8L,
+            9L
         );
         //期待値と比較する
         assertThat(tagIds).as("外部キー・タグID")
@@ -99,18 +99,18 @@ public class ArticleTagRepositoryTest {
         assertThat(artTag).as("取得チェック")
             .isNotEmpty();
         //タグidを取得
-        List<Integer> articleIds = artTag.stream().map(s -> s.getArticleTagPK().getArticleId()).toList();
+        List<Long> articleIds = artTag.stream().map(s -> s.getArticleTagPK().getArticleId()).toList();
         //期待値を設定
-        List<Integer> expectsIds = List.of(
-            9,
-            8,
-            7,
-            6,
-            5,
-            4,
-            3,
-            2,
-            1
+        List<Long> expectsIds = List.of(
+            9L,
+            8L,
+            7L,
+            6L,
+            5L,
+            4L,
+            3L,
+            2L,
+            1L
         );
         //期待値と比較する
         assertThat(articleIds).as("外部キー・記事ID")
@@ -155,7 +155,7 @@ public class ArticleTagRepositoryTest {
     @ParameterizedTest
     @CsvSource({"1, 9", "2, 8", "3, 7", "4, 6"})
     @DisplayName("tagid登録テスト")
-    public void insertTagId(int artId, int tagId){
+    public void insertTagId(Long artId, Long tagId){
         //PK設定
         ArticleTag artTag = new ArticleTag(tagId,artId);
         //保存処理
@@ -187,7 +187,7 @@ public class ArticleTagRepositoryTest {
     @ParameterizedTest
     @CsvSource({"99999, 99999", "12, 18", "13, 17", "14, 16"})
     @DisplayName("tagid登録テスト・失敗")
-    public void insertTagIdFail(int artId, int tagId){
+    public void insertTagIdFail(Long artId, Long tagId){
         //PK設定
         ArticleTag artTag = new ArticleTag(tagId,artId);
         //保存処理

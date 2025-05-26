@@ -26,7 +26,6 @@ public class ArticleTag {
     /***
      * 作成日
      */
-    @NotNull
     @Column(name="created_at", updatable=false)
     private LocalDateTime createdAt;
 
@@ -35,7 +34,7 @@ public class ArticleTag {
      * @param tagId
      * @param articleId
      */
-    public ArticleTag(int tagId, int articleId){
+    public ArticleTag(Long tagId, Long articleId){
         articleTagPK = new ArticleTagPK(tagId, articleId);
         this.createdAt = LocalDateTime.now();
     }

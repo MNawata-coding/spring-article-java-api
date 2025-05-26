@@ -154,18 +154,18 @@ public class UserRepositoryTest {
         assertThat(users).as("空チェック")
             .isNotEmpty();
         //データを取得する
-        List<String> createdBy = users.stream().map(s -> s.getCreatedBy()).toList();
+        List<Long> createdBy = users.stream().map(s -> s.getCreatedBy()).toList();
         //期待値
-        List<String> expectsCreatedBy = List.of(
-            "UserCreatedBy1",
-            "UserCreatedBy2",
-            "UserCreatedBy3",
-            "UserCreatedBy4",
-            "UserCreatedBy5",
-            "UserCreatedBy6",
-            "UserCreatedBy7",
-            "UserCreatedBy8",
-            "UserCreatedBy9"
+        List<Long> expectsCreatedBy = List.of(
+            1L,
+            2L,
+            3L,
+            4L,
+            5L,
+            6L,
+            7L,
+            8L,
+            9L
         );
         //期待値と同じだったら正常
         assertThat(createdBy).as("作成者")
@@ -313,7 +313,7 @@ public class UserRepositoryTest {
         assertThat(user).as("個別取得")
             .isPresent();
         //データを取得する
-        String expects = "updateUser" + idNum;
+        Long expects = 999L + idNum;
         user.get().changeUpdatedBy(expects);
         //保存する
         repository.save(user.get());
@@ -397,7 +397,7 @@ public class UserRepositoryTest {
         //データ設定
         String userName = "insertUser" + num;
         String email = "insertMail@test.com" + num;
-        String createdBy = "createdBy" + num;
+        Long createdBy = 909L + num;
         User user = new User(userName, email, createdBy, ROLE.USER, false);
         //保存する
         repository.save(user);

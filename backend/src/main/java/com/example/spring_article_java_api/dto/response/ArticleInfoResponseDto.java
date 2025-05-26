@@ -1,4 +1,4 @@
-package com.example.spring_article_java_api.dto;
+package com.example.spring_article_java_api.dto.response;
 
 
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.Getter;
  * 記事のIDとタイトルを保持する
  */
 @Getter
-public class GetArticleInfoDto {
+public class ArticleInfoResponseDto {
 
     /***
      * 記事ID
@@ -28,7 +28,7 @@ public class GetArticleInfoDto {
      * @param title
      */
     @Builder
-    public GetArticleInfoDto(int articleId, String title){
+    public ArticleInfoResponseDto(int articleId, String title){
         this.articleId = articleId;
         this.title = title;
     }

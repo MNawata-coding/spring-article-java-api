@@ -1,4 +1,4 @@
-package com.example.spring_article_java_api.dto;
+package com.example.spring_article_java_api.dto.response;
 
 import java.time.LocalDateTime;
 
@@ -11,7 +11,7 @@ import lombok.Getter;
  * 記事の基本的な情報を保持する
  */
 @Getter
-public class GetArticleDetailDto {
+public class ArticleDetailResponseDto {
 
     /***
      * タイトル
@@ -47,7 +47,7 @@ public class GetArticleDetailDto {
      * @param updatedAt
      */
     @Builder
-    public GetArticleDetailDto(String title, String content, boolean releaseFlg
+    public ArticleDetailResponseDto(String title, String content, boolean releaseFlg
     , LocalDateTime createdAt, LocalDateTime updatedAt){
       this.title = title;
       this.content = content;

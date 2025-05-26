@@ -61,18 +61,18 @@ public class TagRepositoryTest {
         assertThat(tag).as("リスト数").hasSize(9);
 
         //取得した値のうち、タグ名称のみ使用する
-        List<Integer> tagNameList = tag.stream().map(s -> s.getTagId()).toList();
+        List<Long> tagNameList = tag.stream().map(s -> s.getTagId()).toList();
         //期待値を設定する
-        List<Integer> tagNameExpects = List.of(
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9
+        List<Long> tagNameExpects = List.of(
+            1L,
+            2L,
+            3L,
+            4L,
+            5L,
+            6L,
+            7L,
+            8L,
+            9L
         );
 
         //取得したIDが設定されている値と同じだったら正常
@@ -125,18 +125,18 @@ public class TagRepositoryTest {
         assertThat(tag).as("リスト数").hasSize(9);
 
         //取得した値のうち、作成者のみ使用する
-        List<String> CreatedByList = tag.stream().map(s -> s.getCreatedBy()).toList();
+        List<Long> CreatedByList = tag.stream().map(s -> s.getCreatedBy()).toList();
         //期待値を設定する
-        List<String> CreatedByExpects = List.of(
-            "tagCreatedBy1",
-            "tagCreatedBy2",
-            "tagCreatedBy3",
-            "tagCreatedBy4",
-            "tagCreatedBy5",
-            "tagCreatedBy6",
-            "tagCreatedBy7",
-            "tagCreatedBy8",
-            "tagCreatedBy9"
+        List<Long> CreatedByExpects = List.of(
+            1L,
+            2L,
+            3L,
+            4L,
+            5L,
+            6L,
+            7L,
+            8L,
+            9L
         );
 
         //取得した作成者が設定されている値と同じだったら正常
@@ -229,7 +229,7 @@ public class TagRepositoryTest {
      */
     @DisplayName("更新者を正常に更新できること")
     @ParameterizedTest
-    @ValueSource(ints={1,2,3})
+    @ValueSource(ints = {1,2,3})
     public void titleUpdateTest(int idNo){
         //idからデータを取得する
         Optional<Tag> tag = repository.findById(idNo);
@@ -237,7 +237,7 @@ public class TagRepositoryTest {
         assertThat(tag).as("nullチェック")
             .isPresent();
         //タグ名称を変更する
-        String updatedBy = "updatedByUpdateTest" + idNo;
+        Long updatedBy = 9999L + idNo;
         //変更をセットする
         tag.get().changeUpdatedBy(updatedBy);
         //データを保存する
@@ -355,7 +355,7 @@ public class TagRepositoryTest {
         //タグEntityを設定
         int tagId = (int)idCount + count;
         String tagName = "insertName" + count;
-        String createdBy = "insertCreatedBy" + count;
+        Long createdBy = 999L + count;
         boolean deleteFlg = false;
         Tag tag = new Tag(tagName, createdBy, deleteFlg);
         //Entityを保存する

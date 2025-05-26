@@ -10,8 +10,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,21 +26,17 @@ public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
-    private int id;
+    private Long id;
 
     /***
      * ユーザー名
      */
-    @NotBlank
-    @Size(max=50)
     @Setter
     private String name;
 
     /***
      * メールアドレス
      */
-    @NotBlank
-    @Size(max=50)
     @Setter
     private String email;
 
@@ -62,7 +56,7 @@ public class User extends BaseEntity {
      * @param role
      * @param deleteFlg
      */
-    public User(String name,String email, String createdBy, ROLE role, boolean deleteFlg){
+    public User(String name,String email, Long createdBy, ROLE role, boolean deleteFlg){
         //初期設定する値を記載
         this.name = name;
         this.email = email;

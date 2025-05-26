@@ -1,0 +1,292 @@
+2025-05-26T00:20:07.186+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : Starting ArticleCreateServiceImpleTest using Java 21.0.6 with PID 22708 (started by namma in E:\PROJECT\article_portfolio\spring-article-java-api\backend)
+2025-05-26T00:20:07.196+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : The following 1 profile is active: "${activate}"
+2025-05-26T00:20:07.247+09:00 DEBUG 22708 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7da39774
+2025-05-26T00:20:08.229+09:00  INFO 22708 --- [spring-article-java-api] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-26T00:20:08.349+09:00  INFO 22708 --- [spring-article-java-api] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 4 JPA repository interfaces.
+2025-05-26T00:20:10.852+09:00  INFO 22708 --- [spring-article-java-api] [main] tc.mysql:8                               : Creating container for image: mysql:8
+2025-05-26T00:20:11.009+09:00  INFO 22708 --- [spring-article-java-api] [main] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2025-05-26T00:20:11.049+09:00  INFO 22708 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
+2025-05-26T00:20:11.332+09:00  INFO 22708 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: d3cda9c154b2b60e1e5319e66fdf79a261dd5803a08192561137075cfe38be3b
+2025-05-26T00:20:12.054+09:00  INFO 22708 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT1.0047321S
+2025-05-26T00:20:12.253+09:00  INFO 22708 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 is starting: 52235c1338745837dfbec3ba75705d661715b4ae47b3d463c0268aa7a29f8e46
+2025-05-26T00:20:12.647+09:00  INFO 22708 --- [spring-article-java-api] [main] tc.mysql:8                               : Waiting for database connection to become available at jdbc:mysql://127.0.0.1:62319/test using query 'SELECT 1'
+2025-05-26T00:20:31.302+09:00  INFO 22708 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 started in PT20.4501475S
+2025-05-26T00:20:31.302+09:00  INFO 22708 --- [spring-article-java-api] [main] tc.mysql:8                               : Container is started (JDBC URL: jdbc:mysql://127.0.0.1:62319/test)
+2025-05-26T00:20:31.989+09:00  INFO 22708 --- [spring-article-java-api] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://127.0.0.1:62319/test (MySQL 8.4)
+2025-05-26T00:20:32.582+09:00  WARN 22708 --- [spring-article-java-api] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2025-05-26T00:20:32.632+09:00  INFO 22708 --- [spring-article-java-api] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `test`.`flyway_schema_history` does not exist yet
+2025-05-26T00:20:32.639+09:00  INFO 22708 --- [spring-article-java-api] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.041s)
+2025-05-26T00:20:32.714+09:00  INFO 22708 --- [spring-article-java-api] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `test`.`flyway_schema_history` ...
+2025-05-26T00:20:32.900+09:00  INFO 22708 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `test`: << Empty Schema >>
+2025-05-26T00:20:32.922+09:00  INFO 22708 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `test` to version "1 - create tables"
+2025-05-26T00:20:33.089+09:00  WARN 22708 --- [spring-article-java-api] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2025-05-26T00:20:33.144+09:00  WARN 22708 --- [spring-article-java-api] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2025-05-26T00:20:33.276+09:00  INFO 22708 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `test` with repeatable migration "test data"
+2025-05-26T00:20:33.331+09:00  INFO 22708 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `test`, now at version v1 (execution time 00:00.300s)
+2025-05-26T00:20:33.430+09:00  INFO 22708 --- [spring-article-java-api] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-26T00:20:33.480+09:00  INFO 22708 --- [spring-article-java-api] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3eb641a8
+2025-05-26T00:20:33.483+09:00  INFO 22708 --- [spring-article-java-api] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-26T00:20:33.981+09:00  INFO 22708 --- [spring-article-java-api] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-26T00:20:35.200+09:00  INFO 22708 --- [spring-article-java-api] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26T00:20:35.428+09:00  WARN 22708 --- [spring-article-java-api] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-26T00:20:35.596+09:00 DEBUG 22708 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2025-05-26T00:20:35.809+09:00 DEBUG 22708 --- [spring-article-java-api] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-26T00:20:35.886+09:00 DEBUG 22708 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-26T00:20:36.009+09:00 DEBUG 22708 --- [spring-article-java-api] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-26T00:20:36.742+09:00  WARN 22708 --- [spring-article-java-api] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 10604e9e-785a-4f53-bdaa-8b33faf34ec9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-26T00:20:36.777+09:00  INFO 22708 --- [spring-article-java-api] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-26T00:20:37.090+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : Started ArticleCreateServiceImpleTest in 30.427 seconds (process running for 32.597)
+2025-05-26T00:20:37.290+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T00:20:37.438+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T00:20:37.467+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T00:20:37.474+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T00:20:37.485+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T00:20:37.492+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T00:20:37.503+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T00:20:37.510+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T00:20:37.522+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T00:20:37.533+09:00 ERROR 22708 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T00:20:37.634+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T00:20:37.639+09:00 ERROR 22708 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T00:20:37.659+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T00:20:37.665+09:00 ERROR 22708 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T00:20:37.685+09:00  INFO 22708 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T00:20:37.688+09:00 ERROR 22708 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T00:20:38.528+09:00 DEBUG 22708 --- [spring-article-java-api] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@7da39774, started on Mon May 26 00:20:07 JST 2025
+2025-05-26T00:20:38.535+09:00  INFO 22708 --- [spring-article-java-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26T00:20:38.537+09:00  INFO 22708 --- [spring-article-java-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-26T00:20:38.546+09:00  INFO 22708 --- [spring-article-java-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-26T11:26:16.824+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : Starting ArticleCreateServiceImpleTest using Java 21.0.6 with PID 14648 (started by namma in E:\PROJECT\article_portfolio\spring-article-java-api\backend)
+2025-05-26T11:26:16.840+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : The following 1 profile is active: "${activate}"
+2025-05-26T11:26:16.877+09:00 DEBUG 14648 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7da39774
+2025-05-26T11:26:17.842+09:00  INFO 14648 --- [spring-article-java-api] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-26T11:26:17.965+09:00  INFO 14648 --- [spring-article-java-api] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 4 JPA repository interfaces.
+2025-05-26T11:26:20.368+09:00  INFO 14648 --- [spring-article-java-api] [main] tc.mysql:8                               : Creating container for image: mysql:8
+2025-05-26T11:26:20.590+09:00  INFO 14648 --- [spring-article-java-api] [main] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2025-05-26T11:26:20.629+09:00  INFO 14648 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
+2025-05-26T11:26:20.996+09:00  INFO 14648 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: e0a864b89e556e78121c989aa6bcee0c9a4b148ccbcc3efcea1ac6759fa86b92
+2025-05-26T11:26:21.830+09:00  INFO 14648 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT1.2015439S
+2025-05-26T11:26:22.131+09:00  INFO 14648 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 is starting: ed569288a23ed2d6d04d30edc5753364a16a32bb47222a6f23335fbe01a197d9
+2025-05-26T11:26:22.562+09:00  INFO 14648 --- [spring-article-java-api] [main] tc.mysql:8                               : Waiting for database connection to become available at jdbc:mysql://127.0.0.1:49389/test using query 'SELECT 1'
+2025-05-26T11:26:40.275+09:00  INFO 14648 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 started in PT19.9062759S
+2025-05-26T11:26:40.275+09:00  INFO 14648 --- [spring-article-java-api] [main] tc.mysql:8                               : Container is started (JDBC URL: jdbc:mysql://127.0.0.1:49389/test)
+2025-05-26T11:26:41.129+09:00  INFO 14648 --- [spring-article-java-api] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://127.0.0.1:49389/test (MySQL 8.4)
+2025-05-26T11:26:41.739+09:00  WARN 14648 --- [spring-article-java-api] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2025-05-26T11:26:41.789+09:00  INFO 14648 --- [spring-article-java-api] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `test`.`flyway_schema_history` does not exist yet
+2025-05-26T11:26:41.795+09:00  INFO 14648 --- [spring-article-java-api] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.037s)
+2025-05-26T11:26:41.843+09:00  INFO 14648 --- [spring-article-java-api] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `test`.`flyway_schema_history` ...
+2025-05-26T11:26:42.064+09:00  INFO 14648 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `test`: << Empty Schema >>
+2025-05-26T11:26:42.089+09:00  INFO 14648 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `test` to version "1 - create tables"
+2025-05-26T11:26:42.211+09:00  WARN 14648 --- [spring-article-java-api] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2025-05-26T11:26:42.269+09:00  WARN 14648 --- [spring-article-java-api] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2025-05-26T11:26:42.414+09:00  INFO 14648 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `test` with repeatable migration "test data"
+2025-05-26T11:26:42.483+09:00  INFO 14648 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `test`, now at version v1 (execution time 00:00.264s)
+2025-05-26T11:26:42.605+09:00  INFO 14648 --- [spring-article-java-api] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-26T11:26:42.657+09:00  INFO 14648 --- [spring-article-java-api] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@165a5979
+2025-05-26T11:26:42.661+09:00  INFO 14648 --- [spring-article-java-api] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-26T11:26:43.401+09:00  INFO 14648 --- [spring-article-java-api] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-26T11:26:44.767+09:00  INFO 14648 --- [spring-article-java-api] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26T11:26:45.050+09:00  WARN 14648 --- [spring-article-java-api] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-26T11:26:45.248+09:00 DEBUG 14648 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2025-05-26T11:26:45.466+09:00 DEBUG 14648 --- [spring-article-java-api] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-26T11:26:45.551+09:00 DEBUG 14648 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-26T11:26:45.714+09:00 DEBUG 14648 --- [spring-article-java-api] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-26T11:26:46.451+09:00  WARN 14648 --- [spring-article-java-api] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: cd994637-4ba5-43e2-bc4e-1868068875dd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-26T11:26:46.473+09:00  INFO 14648 --- [spring-article-java-api] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-26T11:26:46.749+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : Started ArticleCreateServiceImpleTest in 30.474 seconds (process running for 32.773)
+2025-05-26T11:26:46.905+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T11:26:47.043+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T11:26:47.066+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T11:26:47.075+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T11:26:47.086+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T11:26:47.094+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T11:26:47.104+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T11:26:47.111+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T11:26:47.123+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T11:26:47.133+09:00 ERROR 14648 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T11:26:47.141+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T11:26:47.151+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T11:26:47.154+09:00 ERROR 14648 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T11:26:47.159+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T11:26:47.170+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T11:26:47.174+09:00 ERROR 14648 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T11:26:47.178+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T11:26:47.187+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T11:26:47.190+09:00 ERROR 14648 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T11:26:47.194+09:00  INFO 14648 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T11:26:48.062+09:00 DEBUG 14648 --- [spring-article-java-api] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@7da39774, started on Mon May 26 11:26:16 JST 2025
+2025-05-26T11:26:48.069+09:00  INFO 14648 --- [spring-article-java-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26T11:26:48.073+09:00  INFO 14648 --- [spring-article-java-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-26T11:26:48.091+09:00  INFO 14648 --- [spring-article-java-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-26T16:37:18.834+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : Starting ArticleCreateServiceImpleTest using Java 21.0.6 with PID 8220 (started by namma in E:\PROJECT\article_portfolio\spring-article-java-api\backend)
+2025-05-26T16:37:18.836+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : The following 1 profile is active: "${activate}"
+2025-05-26T16:37:18.873+09:00 DEBUG 8220 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1df1ced0
+2025-05-26T16:37:19.768+09:00  INFO 8220 --- [spring-article-java-api] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-26T16:37:19.898+09:00  INFO 8220 --- [spring-article-java-api] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
+2025-05-26T16:37:22.303+09:00  INFO 8220 --- [spring-article-java-api] [main] tc.mysql:8                               : Creating container for image: mysql:8
+2025-05-26T16:37:22.459+09:00  INFO 8220 --- [spring-article-java-api] [main] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2025-05-26T16:37:22.480+09:00  INFO 8220 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
+2025-05-26T16:37:22.816+09:00  INFO 8220 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: be09e03e6975758f2856a257e53d9527861bedfbe5f87ecb1f6d50572b841abf
+2025-05-26T16:37:23.758+09:00  INFO 8220 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT1.2777911S
+2025-05-26T16:37:23.992+09:00  INFO 8220 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 is starting: f4acb3740ca2a64fb7167ff0663407ad97b92ba1ef3b6c63fbd2a49b3a3d732a
+2025-05-26T16:37:24.436+09:00  INFO 8220 --- [spring-article-java-api] [main] tc.mysql:8                               : Waiting for database connection to become available at jdbc:mysql://127.0.0.1:56198/test using query 'SELECT 1'
+2025-05-26T16:37:42.723+09:00  INFO 8220 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 started in PT20.4202572S
+2025-05-26T16:37:42.723+09:00  INFO 8220 --- [spring-article-java-api] [main] tc.mysql:8                               : Container is started (JDBC URL: jdbc:mysql://127.0.0.1:56198/test)
+2025-05-26T16:37:43.400+09:00  INFO 8220 --- [spring-article-java-api] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://127.0.0.1:56198/test (MySQL 8.4)
+2025-05-26T16:37:44.003+09:00  WARN 8220 --- [spring-article-java-api] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2025-05-26T16:37:44.053+09:00  INFO 8220 --- [spring-article-java-api] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `test`.`flyway_schema_history` does not exist yet
+2025-05-26T16:37:44.059+09:00  INFO 8220 --- [spring-article-java-api] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.040s)
+2025-05-26T16:37:44.117+09:00  INFO 8220 --- [spring-article-java-api] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `test`.`flyway_schema_history` ...
+2025-05-26T16:37:44.324+09:00  INFO 8220 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `test`: << Empty Schema >>
+2025-05-26T16:37:44.349+09:00  INFO 8220 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `test` to version "1 - create tables"
+2025-05-26T16:37:44.466+09:00  WARN 8220 --- [spring-article-java-api] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2025-05-26T16:37:44.516+09:00  WARN 8220 --- [spring-article-java-api] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2025-05-26T16:37:44.674+09:00  INFO 8220 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `test` with repeatable migration "test data"
+2025-05-26T16:37:44.737+09:00  INFO 8220 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `test`, now at version v1 (execution time 00:00.272s)
+2025-05-26T16:37:44.856+09:00  INFO 8220 --- [spring-article-java-api] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-26T16:37:44.912+09:00  INFO 8220 --- [spring-article-java-api] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@165a5979
+2025-05-26T16:37:44.915+09:00  INFO 8220 --- [spring-article-java-api] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-26T16:37:45.448+09:00  INFO 8220 --- [spring-article-java-api] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-26T16:37:46.603+09:00  INFO 8220 --- [spring-article-java-api] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26T16:37:46.834+09:00  WARN 8220 --- [spring-article-java-api] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-26T16:37:46.981+09:00 DEBUG 8220 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2025-05-26T16:37:47.201+09:00 DEBUG 8220 --- [spring-article-java-api] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-26T16:37:47.288+09:00 DEBUG 8220 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-26T16:37:47.436+09:00 DEBUG 8220 --- [spring-article-java-api] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-26T16:37:48.023+09:00  WARN 8220 --- [spring-article-java-api] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 772907f4-ed93-439c-b8b9-8e688bab7cc5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-26T16:37:48.049+09:00  INFO 8220 --- [spring-article-java-api] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-26T16:37:48.271+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : Started ArticleCreateServiceImpleTest in 29.965 seconds (process running for 32.191)
+2025-05-26T16:37:48.406+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T16:37:48.519+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T16:37:48.541+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T16:37:48.549+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T16:37:48.558+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T16:37:48.567+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T16:37:48.576+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T16:37:48.583+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T16:37:48.594+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:37:48.602+09:00 ERROR 8220 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:37:48.611+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest終了
+2025-05-26T16:37:48.619+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:37:48.623+09:00 ERROR 8220 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:37:48.628+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest終了
+2025-05-26T16:37:48.637+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:37:48.639+09:00 ERROR 8220 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:37:48.643+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest終了
+2025-05-26T16:37:48.651+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:37:48.654+09:00 ERROR 8220 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:37:48.659+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest終了
+2025-05-26T16:37:48.667+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest開始
+2025-05-26T16:37:48.671+09:00 ERROR 8220 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:37:48.674+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest終了
+2025-05-26T16:37:48.681+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest開始
+2025-05-26T16:37:48.685+09:00 ERROR 8220 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:37:48.689+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest終了
+2025-05-26T16:37:48.698+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest開始
+2025-05-26T16:37:48.701+09:00 ERROR 8220 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:37:48.704+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest終了
+2025-05-26T16:37:48.711+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest開始
+2025-05-26T16:37:48.714+09:00 ERROR 8220 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:37:48.716+09:00  INFO 8220 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest終了
+2025-05-26T16:37:49.644+09:00 DEBUG 8220 --- [spring-article-java-api] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1df1ced0, started on Mon May 26 16:37:18 JST 2025
+2025-05-26T16:37:49.653+09:00  INFO 8220 --- [spring-article-java-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26T16:37:49.658+09:00  INFO 8220 --- [spring-article-java-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-26T16:37:49.672+09:00  INFO 8220 --- [spring-article-java-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-26T16:53:11.883+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : Starting ArticleCreateServiceImpleTest using Java 21.0.6 with PID 22292 (started by namma in E:\PROJECT\article_portfolio\spring-article-java-api\backend)
+2025-05-26T16:53:11.884+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : The following 1 profile is active: "${activate}"
+2025-05-26T16:53:11.923+09:00 DEBUG 22292 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2aaf152b
+2025-05-26T16:53:12.837+09:00  INFO 22292 --- [spring-article-java-api] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-26T16:53:12.947+09:00  INFO 22292 --- [spring-article-java-api] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 4 JPA repository interfaces.
+2025-05-26T16:53:15.343+09:00  INFO 22292 --- [spring-article-java-api] [main] tc.mysql:8                               : Creating container for image: mysql:8
+2025-05-26T16:53:15.487+09:00  INFO 22292 --- [spring-article-java-api] [main] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2025-05-26T16:53:15.507+09:00  INFO 22292 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
+2025-05-26T16:53:15.821+09:00  INFO 22292 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: 7338989efeb8421a92b162ad1a0b6ea41488d36ed8e12cb8c1c389608cbf6e63
+2025-05-26T16:53:16.615+09:00  INFO 22292 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT1.1087486S
+2025-05-26T16:53:16.848+09:00  INFO 22292 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 is starting: 8a18adf0e4b5f42f41a7dcb7afa8dde1f37300800bc1f5dc5e2e64bb14bbfb9c
+2025-05-26T16:53:17.277+09:00  INFO 22292 --- [spring-article-java-api] [main] tc.mysql:8                               : Waiting for database connection to become available at jdbc:mysql://127.0.0.1:56589/test using query 'SELECT 1'
+2025-05-26T16:53:34.636+09:00  INFO 22292 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 started in PT19.2937305S
+2025-05-26T16:53:34.637+09:00  INFO 22292 --- [spring-article-java-api] [main] tc.mysql:8                               : Container is started (JDBC URL: jdbc:mysql://127.0.0.1:56589/test)
+2025-05-26T16:53:35.323+09:00  INFO 22292 --- [spring-article-java-api] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://127.0.0.1:56589/test (MySQL 8.4)
+2025-05-26T16:53:35.906+09:00  WARN 22292 --- [spring-article-java-api] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2025-05-26T16:53:35.950+09:00  INFO 22292 --- [spring-article-java-api] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `test`.`flyway_schema_history` does not exist yet
+2025-05-26T16:53:35.957+09:00  INFO 22292 --- [spring-article-java-api] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.036s)
+2025-05-26T16:53:36.006+09:00  INFO 22292 --- [spring-article-java-api] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `test`.`flyway_schema_history` ...
+2025-05-26T16:53:36.186+09:00  INFO 22292 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `test`: << Empty Schema >>
+2025-05-26T16:53:36.211+09:00  INFO 22292 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `test` to version "1 - create tables"
+2025-05-26T16:53:36.327+09:00  WARN 22292 --- [spring-article-java-api] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2025-05-26T16:53:36.381+09:00  WARN 22292 --- [spring-article-java-api] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+2025-05-26T16:53:36.533+09:00  INFO 22292 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `test` with repeatable migration "test data"
+2025-05-26T16:53:36.591+09:00  INFO 22292 --- [spring-article-java-api] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `test`, now at version v1 (execution time 00:00.255s)
+2025-05-26T16:53:36.686+09:00  INFO 22292 --- [spring-article-java-api] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-26T16:53:36.736+09:00  INFO 22292 --- [spring-article-java-api] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@165a5979
+2025-05-26T16:53:36.739+09:00  INFO 22292 --- [spring-article-java-api] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-26T16:53:37.310+09:00  INFO 22292 --- [spring-article-java-api] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-26T16:53:38.439+09:00  INFO 22292 --- [spring-article-java-api] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26T16:53:38.671+09:00  WARN 22292 --- [spring-article-java-api] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-26T16:53:38.816+09:00 DEBUG 22292 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2025-05-26T16:53:39.035+09:00 DEBUG 22292 --- [spring-article-java-api] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-26T16:53:39.119+09:00 DEBUG 22292 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-26T16:53:39.255+09:00 DEBUG 22292 --- [spring-article-java-api] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-26T16:53:39.871+09:00  WARN 22292 --- [spring-article-java-api] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2ffb3969-34bc-461a-abbd-ad9024098fc0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-26T16:53:39.890+09:00  INFO 22292 --- [spring-article-java-api] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-26T16:53:40.110+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : Started ArticleCreateServiceImpleTest in 28.763 seconds (process running for 31.011)
+2025-05-26T16:53:40.237+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T16:53:40.360+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T16:53:40.381+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T16:53:40.389+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T16:53:40.398+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T16:53:40.406+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T16:53:40.415+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest開始
+2025-05-26T16:53:40.422+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : saveTest終了
+2025-05-26T16:53:40.433+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:53:40.465+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:53:40.475+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:53:40.486+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:53:40.497+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:53:40.502+09:00 ERROR 22292 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:53:40.510+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest終了
+2025-05-26T16:53:40.519+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:53:40.523+09:00 ERROR 22292 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:53:40.528+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest終了
+2025-05-26T16:53:40.537+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:53:40.541+09:00 ERROR 22292 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:53:40.550+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest終了
+2025-05-26T16:53:40.562+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest開始
+2025-05-26T16:53:40.566+09:00 ERROR 22292 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:53:40.572+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : lockingErrorTest終了
+2025-05-26T16:53:40.585+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest開始
+2025-05-26T16:53:40.590+09:00 ERROR 22292 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:53:40.595+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest終了
+2025-05-26T16:53:40.604+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest開始
+2025-05-26T16:53:40.608+09:00 ERROR 22292 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:53:40.613+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest終了
+2025-05-26T16:53:40.621+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest開始
+2025-05-26T16:53:40.624+09:00 ERROR 22292 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:53:40.628+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest終了
+2025-05-26T16:53:40.638+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest開始
+2025-05-26T16:53:40.641+09:00 ERROR 22292 --- [spring-article-java-api] [main] c.e.s.s.create.ArticleCreateServiceImpl  : testError
+2025-05-26T16:53:40.645+09:00  INFO 22292 --- [spring-article-java-api] [main] c.e.s.s.ArticleCreateServiceImpleTest    : argumentErrorTest終了
+2025-05-26T16:53:41.587+09:00 DEBUG 22292 --- [spring-article-java-api] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@2aaf152b, started on Mon May 26 16:53:11 JST 2025
+2025-05-26T16:53:41.594+09:00  INFO 22292 --- [spring-article-java-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26T16:53:41.597+09:00  INFO 22292 --- [spring-article-java-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-26T16:53:41.607+09:00  INFO 22292 --- [spring-article-java-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

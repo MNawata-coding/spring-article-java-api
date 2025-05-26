@@ -106,13 +106,13 @@ public class ArticleRepositoryTest {
 
         //likecountTest
         //デフォルト0が入っているか確認
-        List<Integer> likeList = article.stream().map(s -> s.getLikeCnt()).toList();
+        List<Long> likeList = article.stream().map(s -> s.getLikeCnt()).toList();
         //全て0だったらOK
         ArticleAssertUtil.assertThat(likeList).as("ライク数").isAllZero(likeList);
 
         //ViewCountTest
         //デフォルト0が入っているか確認
-        List<Integer> viewList = article.stream().map(s -> s.getViewCnt()).toList();
+        List<Long> viewList = article.stream().map(s -> s.getViewCnt()).toList();
         //全て0だったらOK
         ArticleAssertUtil.assertThat(viewList).as("閲覧数").isAllZero(viewList);
 
@@ -126,18 +126,18 @@ public class ArticleRepositoryTest {
             .withFailMessage("予約日の値が一致しません");
 
         //作成者テスト
-        List<String> userList = article.stream().map(s -> s.getCreatedBy()).toList();
+        List<Long> userList = article.stream().map(s -> s.getCreatedBy()).toList();
         //期待値を追加
-        List<String> userExpect = List.of(
-            "testUser1",
-            "testUser2",
-            "testUser3",
-            "testUser4",
-            "testUser5",
-            "testUser6",
-            "testUser7",
-            "testUser8",
-            "testUser9"
+        List<Long> userExpect = List.of(
+            1L,
+            2L,
+            3L,
+            4L,
+            5L,
+            6L,
+            7L,
+            8L,
+            9L
         );
         //値の整合性とリスト内の個数を検証
         assertThat(userList).as("作成者名")
@@ -224,13 +224,13 @@ public class ArticleRepositoryTest {
             .withFailMessage("内容の値が一致しません");
 
         //likecountTest
-        List<Integer> likeList = article.stream().map(s -> s.getLikeCnt()).toList();
+        List<Long> likeList = article.stream().map(s -> s.getLikeCnt()).toList();
         //すべて0の場合正常
         ArticleAssertUtil.assertThat(likeList).as("ライク数").isAllZero(likeList);
 
         //ViewCountTest
         //デフォルト0が入っているか確認
-        List<Integer> viewList = article.stream().map(s -> s.getViewCnt()).toList();
+        List<Long> viewList = article.stream().map(s -> s.getViewCnt()).toList();
         //全て0の場合正常
         ArticleAssertUtil.assertThat(viewList).as("閲覧数").isAllZero(viewList);
 
@@ -240,17 +240,17 @@ public class ArticleRepositoryTest {
         assertThat(reservationList).as("予約日")
             .containsOnlyNulls();
         //作成者テスト
-        List<String> userList = article.stream().map(s -> s.getCreatedBy()).toList();
+        List<Long> userList = article.stream().map(s -> s.getCreatedBy()).toList();
         //期待値を追加
-        List<String> userExpect = List.of(
-            "testUser1",
-            "testUser2",
-            "testUser4",
-            "testUser5",
-            "testUser6",
-            "testUser7",
-            "testUser8",
-            "testUser9"
+        List<Long> userExpect = List.of(
+            1L,
+            2L,
+            4L,
+            5L,
+            6L,
+            7L,
+            8L,
+            9L
         );
         //値の整合性とリスト内の個数を検証
         assertThat(userList).as("ユーザーリスト")
@@ -293,7 +293,6 @@ public class ArticleRepositoryTest {
     // @Sql(scripts = createdAtDesc + "/R__insert_data.sql")
     @Test
     public void upsertTest() throws Exception {
-
 
         int idThree = 3;
         //idからEntity取得
@@ -381,7 +380,7 @@ public class ArticleRepositoryTest {
                     "upsertTest",
                     "this is UpSert Test",
                     false,
-                    "upsertTest"
+                    99L
                 );
         repository.save(insArt);
 
@@ -425,13 +424,13 @@ public class ArticleRepositoryTest {
 
         //likecountTest
         //デフォルト0が入っているか確認
-        List<Integer> likeList = article.stream().map(s -> s.getLikeCnt()).toList();
+        List<Long> likeList = article.stream().map(s -> s.getLikeCnt()).toList();
         //全て0の場合正常
         ArticleAssertUtil.assertThat(likeList).as("ライク数").isAllZero(likeList);
 
         //ViewCountTest
         //デフォルト0が入っているか確認
-        List<Integer> viewList = article.stream().map(s -> s.getViewCnt()).toList();
+        List<Long> viewList = article.stream().map(s -> s.getViewCnt()).toList();
         //全て0の場合正常
         ArticleAssertUtil.assertThat(viewList).as("閲覧数").isAllZero(viewList);
 
@@ -454,19 +453,19 @@ public class ArticleRepositoryTest {
 
 
         //作成者テスト
-        List<String> userList = article.stream().map(s -> s.getCreatedBy()).toList();
+        List<Long> userList = article.stream().map(s -> s.getCreatedBy()).toList();
         //期待値を追加
-        List<String> userExpect = List.of(
-            "testUser1",
-            "testUser2",
-            "testUser3",
-            "testUser4",
-            "testUser5",
-            "testUser6",
-            "testUser7",
-            "testUser8",
-            "testUser9",
-            "upsertTest"
+        List<Long> userExpect = List.of(
+            1L,
+            2L,
+            3L,
+            4L,
+            5L,
+            6L,
+            7L,
+            8L,
+            9L,
+            99L
         );
         //値の整合性とリスト内の個数を検証
         assertThat(userList).as("作成者名")
@@ -501,22 +500,22 @@ public class ArticleRepositoryTest {
         
         //like数
         //like数を取得
-        List<Integer> filterlikeList = article.stream().map(s -> s.getLikeCnt()).toList();
+        List<Long> filterlikeList = article.stream().map(s -> s.getLikeCnt()).toList();
         //like数が0のデータを取得
-        List<Integer> zeroFilterLikeList = filterlikeList.stream().filter(s -> s == 0).toList();
+        List<Long> zeroFilterLikeList = filterlikeList.stream().filter(s -> s == 0).toList();
         assertThat(zeroFilterLikeList).as("like数").hasSize(8);
         //1の数を取得
-        List<Integer> oneFilterLikeList = filterlikeList.stream().filter(s -> s == 1).toList();
+        List<Long> oneFilterLikeList = filterlikeList.stream().filter(s -> s == 1).toList();
         assertThat(oneFilterLikeList).as("like数が1の値").hasSize(2);
 
         //閲覧数
         //閲覧数を取得
-        List<Integer> filterViewList = article.stream().map(s -> s.getViewCnt()).toList();
+        List<Long> filterViewList = article.stream().map(s -> s.getViewCnt()).toList();
         //0のデータを取得
-        List<Integer> zeroFilterViewList = filterViewList.stream().filter(s -> s == 0).toList();
+        List<Long> zeroFilterViewList = filterViewList.stream().filter(s -> s == 0).toList();
         assertThat(zeroFilterViewList).as("閲覧数0のデータ").hasSize(8);
         //1のデータを取得
-        List<Integer> oneFilterViewList = filterViewList.stream().filter(s -> s == 1).toList();
+        List<Long> oneFilterViewList = filterViewList.stream().filter(s -> s == 1).toList();
         assertThat(oneFilterViewList).as("閲覧数1のデータ").hasSize(2);
     }
 
@@ -540,7 +539,7 @@ public class ArticleRepositoryTest {
             "titleTest001",
             "contentTest001",
             false,
-            "testCreatedBy001"
+            100001L
         );
         repository.save(insertArt001);
 
@@ -549,7 +548,7 @@ public class ArticleRepositoryTest {
             "titletest002",
             "contentTest002",
             false,
-            "testCreatedBy002"
+            100002L
         );
         repository.save(insertArt002);
 

@@ -2,6 +2,8 @@ package com.example.spring_article_java_api.dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /***
  * 結果返却DTO
@@ -9,18 +11,32 @@ import lombok.Getter;
  * Controllerからの返却はしない
  */
 @Getter
+@NoArgsConstructor
 public class ResultDto {
     
     /***
      * 処理結果
      */
-    private final boolean result;
+    @Setter
+    private boolean result;
 
     /***
      * メッセージ
      * 成功の場合もメッセージを設定
      */
-    private final String message;
+    @Setter
+    private String message;
+
+    /***
+     * エラー発生時のメッセージ
+     */
+    private String errorMessage;
+
+    /***
+     * エラーコード
+     */
+    @Setter
+    private Long errorCode;
 
     /***
      * 初期設定用コンストラクタ
@@ -28,8 +44,9 @@ public class ResultDto {
      * @param message
      */
     @Builder
-    public ResultDto(boolean result, String message){
+    public ResultDto(boolean result, String message, String errorMessage){
         this.result = result;
         this.message = message;
+        this.errorMessage = errorMessage;
     }
 }
