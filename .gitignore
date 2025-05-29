@@ -7,6 +7,7 @@ build/
 flyway-11.8.0/
 .env.docker
 .env.local
+log/
 
 ### STS ###
 .apt_generated

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
@@ -40,10 +41,10 @@ public class ArticleCreateControllerTest {
     @MockitoBean
     ArticleCreateService service;
 
-    @MockitoBean
+    @Mock
     MessageUtils message;
 
-    @MockitoBean
+    @Mock
     ResultUtils result;
     
     @Captor
