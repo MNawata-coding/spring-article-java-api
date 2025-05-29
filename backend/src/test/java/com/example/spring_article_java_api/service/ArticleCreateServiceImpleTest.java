@@ -18,7 +18,6 @@ import org.mockito.Captor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
-import org.springframework.core.codec.EncodingException;
 import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.testcontainers.containers.MySQLContainer;
@@ -26,6 +25,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import com.example.spring_article_java_api.dto.request.ArticleDetailCreateRequestDto;
+import com.example.spring_article_java_api.dto.response.ArticleDetailResponseDto;
 import com.example.spring_article_java_api.entity.Article;
 import com.example.spring_article_java_api.exception.ArticleCreateException;
 import com.example.spring_article_java_api.repository.ArticleRepository;
@@ -70,20 +70,22 @@ public class ArticleCreateServiceImpleTest {
         log.info("saveTest開始");
 
         //repository呼び出し時の返却する値を設定
-        Article art = new Article("testTitle" + Num, "testContent" + Num, false, 1L);
+        Article art = new Article("testTitle" + Num, 9990L + Num, "testContent" + Num, false, 9990L + Num);
         //repository呼び出し時の挙動を設定する
         when(repository.save(any())).thenReturn(art);
 
         ArticleDetailCreateRequestDto dto = ArticleDetailCreateRequestDto.builder()
-            .userId(1L)
+            .userId(9990L + Num)
             .title("testtitle" + Num)
             .content("content" + Num)
             .releaseFlg(false)
             .deleteFlg(false)
             .build();
+        
+        ArticleDetailResponseDto resultDto = ArticleDetailResponseDto.builder().build();
         try {
             //Service実行
-            service.createArticle(dto);
+            resultDto = service.createArticle(dto);
         } catch (ArticleCreateException e){
             //異常終了で失敗
             fail(e.getMessage());
@@ -100,9 +102,11 @@ public class ArticleCreateServiceImpleTest {
         //引数の値を取得
         Article captured = captor.getValue();
 
-        //各値が正常に設定されているかを確認する
+        //引数に設定されている値
         assertThat(captured.getTitle()).as("タイトル")
             .isEqualTo("testtitle" + Num);
+        assertThat(captured.getUserId()).as("ユーザーID")
+            .isEqualTo(9990L + Num);
         assertThat(captured.getContent()).as("内容")
             .isEqualTo("content" + Num);
         assertThat(captured.isReleaseFlg()).as("表示フラグ")
@@ -110,7 +114,20 @@ public class ArticleCreateServiceImpleTest {
         assertThat(captured.isDeleteFlg()).as("削除フラグ")
             .isEqualTo(false);
         assertThat(captured.getCreatedBy()).as("作成者")
-            .isEqualTo(1L);
+            .isEqualTo(9990L + Num);
+
+        //返却された値
+        assertThat(resultDto.getTitle()).as("返却タイトル")
+            .isEqualTo(art.getTitle());
+        assertThat(resultDto.getContent()).as("返却内容")
+            .isEqualTo(art.getContent());
+        assertThat(resultDto.isReleaseFlg()).as("返却表示フラグ")
+            .isEqualTo(art.isReleaseFlg());
+        assertThat(resultDto.getCreatedAt()).as("返却作成時刻")
+            .isEqualTo(art.getCreatedAt());
+        assertThat(resultDto.getUpdatedAt()).as("返却更新時刻")
+            .isEqualTo(art.getUpdatedAt());
+        
 
         log.info("saveTest終了");
     }
@@ -171,8 +188,8 @@ public class ArticleCreateServiceImpleTest {
 
         //repository呼び出し時の挙動を設定する
         when(repository.save(any())).thenThrow(new NullPointerException("testError"));
-        when(repository.save(any())).thenThrow(new Exception("testError"));
-        when(repository.save(any())).thenThrow(new EncodingException("testError"));
+        // when(repository.save(any())).thenThrow(new IOException("testError"));
+        // when(repository.save(any())).thenThrow(new EncodingException("testError"));
 
         ArticleDetailCreateRequestDto dto = ArticleDetailCreateRequestDto.builder()
             .userId(1L)
@@ -182,11 +199,11 @@ public class ArticleCreateServiceImpleTest {
             .deleteFlg(false)
             .build();
             //Service実行
-            for(int i=0; i < 0; i++){
-                assertThatThrownBy(() -> service.createArticle(dto))
-                    .isInstanceOf(ArticleCreateException.class)
-                    .hasMessageContaining("不明なエラーが発生しました");
-            }
+        for(int i=0; i < 4; i++){
+            assertThatThrownBy(() -> service.createArticle(dto))
+                .isInstanceOf(ArticleCreateException.class)
+                .hasMessageContaining("不明なエラーが発生しました");
+        }
 
         log.info("lockingErrorTest終了");
     }

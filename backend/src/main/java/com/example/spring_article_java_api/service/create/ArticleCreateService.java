@@ -1,7 +1,7 @@
 package com.example.spring_article_java_api.service.create;
 
-import com.example.spring_article_java_api.dto.ResultDto;
 import com.example.spring_article_java_api.dto.request.ArticleDetailCreateRequestDto;
+import com.example.spring_article_java_api.dto.response.ArticleDetailResponseDto;
 
 /***
  * 記事クラスのインターフェース
@@ -13,7 +13,7 @@ public interface ArticleCreateService {
      * 記事登録用メソッド
      * @param dto
      */
-    void createArticle(ArticleDetailCreateRequestDto dto);
+    ArticleDetailResponseDto createArticle(ArticleDetailCreateRequestDto dto);
 
     // /***
     //  * 新着記事一覧

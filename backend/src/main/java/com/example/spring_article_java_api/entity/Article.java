@@ -31,7 +31,7 @@ public class Article extends BaseEntity {
     * ユーザーID
     */
     @Column(name="user_id", nullable = false)
-    private int userId;
+    private Long userId;
 
     /***
      * タイトル
@@ -80,11 +80,13 @@ public class Article extends BaseEntity {
      * @param content
      * @param releaseFlg
      * @param createdBy
+     * @param userId
      */
-    public Article(String title, String content, boolean releaseFlg, Long createdBy){
+    public Article(String title, Long userId, String content, boolean releaseFlg, Long createdBy){
         //必須項目をコンストラクタで設定し、漏れがないようにする。
         //Entityに値を設定する
         this.title = title;
+        this.userId = userId;
         this.content = content;
         this.releaseFlg = releaseFlg;
         changeCreatedBy(createdBy);

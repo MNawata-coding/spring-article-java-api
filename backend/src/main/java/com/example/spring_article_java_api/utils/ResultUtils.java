@@ -4,13 +4,13 @@ import org.springframework.stereotype.Component;
 
 import com.example.spring_article_java_api.dto.ResultDto;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Component
 public class ResultUtils {
 
-    MessageUtils message;
+    private final MessageUtils message;
 
     /***
      *  正常終了
