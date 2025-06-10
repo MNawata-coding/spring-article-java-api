@@ -25,7 +25,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import com.example.spring_article_java_api.dto.request.ArticleDetailCreateRequestDto;
-import com.example.spring_article_java_api.dto.response.ArticleDetailResponseDto;
+import com.example.spring_article_java_api.dto.response.ArticleDetailCreateResponseDto;
 import com.example.spring_article_java_api.entity.Article;
 import com.example.spring_article_java_api.exception.ArticleCreateException;
 import com.example.spring_article_java_api.repository.ArticleRepository;
@@ -81,8 +81,8 @@ public class ArticleCreateServiceImpleTest {
             .releaseFlg(false)
             .deleteFlg(false)
             .build();
-        
-        ArticleDetailResponseDto resultDto = ArticleDetailResponseDto.builder().build();
+
+        ArticleDetailCreateResponseDto resultDto = ArticleDetailCreateResponseDto.builder().build();
         try {
             //Service実行
             resultDto = service.createArticle(dto);
@@ -117,17 +117,10 @@ public class ArticleCreateServiceImpleTest {
             .isEqualTo(9990L + Num);
 
         //返却された値
-        assertThat(resultDto.getTitle()).as("返却タイトル")
+        assertThat(resultDto.getUserId()).as("ユーザーID")
             .isEqualTo(art.getTitle());
-        assertThat(resultDto.getContent()).as("返却内容")
+        assertThat(resultDto.getArticleId()).as("記事ID")
             .isEqualTo(art.getContent());
-        assertThat(resultDto.isReleaseFlg()).as("返却表示フラグ")
-            .isEqualTo(art.isReleaseFlg());
-        assertThat(resultDto.getCreatedAt()).as("返却作成時刻")
-            .isEqualTo(art.getCreatedAt());
-        assertThat(resultDto.getUpdatedAt()).as("返却更新時刻")
-            .isEqualTo(art.getUpdatedAt());
-        
 
         log.info("saveTest終了");
     }

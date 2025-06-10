@@ -8,12 +8,15 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /***
  * ユーザー登録DTO
  * ユーザ登録時に必要なデータを保持する
  */
+@RequiredArgsConstructor
 @Getter
+@Builder
 public class UserCreateRequestDto {
 
     /***
@@ -37,16 +40,4 @@ public class UserCreateRequestDto {
     @NotNull
     private final ROLE role;
 
-    /***
-     * 初期設定用コンストラクタ
-     * @param name
-     * @param email
-     * @param role
-     */
-    @Builder
-    public UserCreateRequestDto(String name, String email, ROLE role){
-        this.name = name;
-        this.email = email;
-        this.role = role;
-    }
 }

@@ -6,19 +6,22 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /***
  * 記事投稿用DTO
  * 記事投稿時に必要なデータを保持する
  */
+@RequiredArgsConstructor
 @Getter
+@Builder
 public class ArticleDetailCreateRequestDto {
 
     /***
      * ユーザーID
      */
     @Min(0)
-    private final Long userId;
+    private final long userId;
 
     /***
      * タイトル
@@ -44,21 +47,4 @@ public class ArticleDetailCreateRequestDto {
      */
     private final boolean deleteFlg;
 
-    
-    /***
-     * 初期設定用コンストラクタ
-     * @param userId
-     * @param title
-     * @param content
-     * @param releaseFlg
-     * @param deleteFlg
-     */
-    @Builder
-    public ArticleDetailCreateRequestDto(Long userId, String title, String content, boolean releaseFlg, boolean deleteFlg){
-      this.userId = userId;
-      this.title = title;
-      this.content = content;
-      this.releaseFlg = releaseFlg;
-      this.deleteFlg = deleteFlg;
-    }
 }

@@ -1,0 +1,100 @@
+2025-05-30T20:27:03.948+09:00  INFO 40892 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : Starting ArticleCreateControllerTest using Java 21.0.6 with PID 40892 (started by namma in E:\PROJECT\article_portfolio\spring-article-java-api\backend)
+2025-05-30T20:27:03.950+09:00  INFO 40892 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : The following 1 profile is active: "${activate}"
+2025-05-30T20:27:03.975+09:00 DEBUG 40892 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7b81616b
+2025-05-30T20:27:06.498+09:00  WARN 40892 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'globalExceptionHandler' defined in file [E:\PROJECT\article_portfolio\spring-article-java-api\backend\bin\main\com\example\spring_article_java_api\advice\GlobalExceptionHandler.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.spring_article_java_api.utils.ResultUtils' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-05-30T20:27:06.538+09:00  INFO 40892 --- [spring-article-java-api] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-30T20:27:06.626+09:00 ERROR 40892 --- [spring-article-java-api] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.spring_article_java_api.advice.GlobalExceptionHandler required a bean of type 'com.example.spring_article_java_api.utils.ResultUtils' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.spring_article_java_api.utils.ResultUtils' in your configuration.
+
+2025-05-30T20:27:30.676+09:00  INFO 35648 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : Starting ArticleCreateControllerTest using Java 21.0.6 with PID 35648 (started by namma in E:\PROJECT\article_portfolio\spring-article-java-api\backend)
+2025-05-30T20:27:30.677+09:00  INFO 35648 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : The following 1 profile is active: "${activate}"
+2025-05-30T20:27:30.696+09:00 DEBUG 35648 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1455154c
+2025-05-30T20:27:32.895+09:00  WARN 35648 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'globalExceptionHandler' defined in file [E:\PROJECT\article_portfolio\spring-article-java-api\backend\bin\main\com\example\spring_article_java_api\advice\GlobalExceptionHandler.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.spring_article_java_api.utils.ResultUtils' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-05-30T20:27:32.939+09:00  INFO 35648 --- [spring-article-java-api] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-30T20:27:33.014+09:00 ERROR 35648 --- [spring-article-java-api] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.spring_article_java_api.advice.GlobalExceptionHandler required a bean of type 'com.example.spring_article_java_api.utils.ResultUtils' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.spring_article_java_api.utils.ResultUtils' in your configuration.
+
+2025-05-30T20:35:49.184+09:00  INFO 15788 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : Starting ArticleCreateControllerTest using Java 21.0.6 with PID 15788 (started by namma in E:\PROJECT\article_portfolio\spring-article-java-api\backend)
+2025-05-30T20:35:49.186+09:00  INFO 15788 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : The following 1 profile is active: "${activate}"
+2025-05-30T20:35:49.209+09:00 DEBUG 15788 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@e146f93
+2025-05-30T20:35:52.239+09:00 DEBUG 15788 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2025-05-30T20:35:52.509+09:00 DEBUG 15788 --- [spring-article-java-api] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-30T20:35:52.598+09:00 DEBUG 15788 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-30T20:35:52.692+09:00 DEBUG 15788 --- [spring-article-java-api] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-30T20:35:52.783+09:00  WARN 15788 --- [spring-article-java-api] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a5811ab4-536e-49ca-8722-2c401205a8b0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-30T20:35:52.863+09:00  INFO 15788 --- [spring-article-java-api] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-30T20:35:53.277+09:00  INFO 15788 --- [spring-article-java-api] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-05-30T20:35:53.278+09:00  INFO 15788 --- [spring-article-java-api] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-05-30T20:35:53.279+09:00  INFO 15788 --- [spring-article-java-api] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-05-30T20:35:53.319+09:00  INFO 15788 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : Started ArticleCreateControllerTest in 4.766 seconds (process running for 7.05)
+2025-05-30T20:35:53.381+09:00  INFO 15788 --- [spring-article-java-api] [main] tc.mysql:8                               : Creating container for image: mysql:8
+2025-05-30T20:35:53.627+09:00  INFO 15788 --- [spring-article-java-api] [main] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2025-05-30T20:35:53.644+09:00  INFO 15788 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
+2025-05-30T20:35:53.916+09:00  INFO 15788 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: be64285ea7b093a3d2c94b765de26d0edc5d1c9df32a5b929f1eda6fd943195b
+2025-05-30T20:35:54.718+09:00  INFO 15788 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT1.0737285S
+2025-05-30T20:35:54.956+09:00  INFO 15788 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 is starting: 0eb862ef8e7aed258a5d1c1ca8b6dafff39099449d7e4bfb1e962365b701d918
+2025-05-30T20:35:55.424+09:00  INFO 15788 --- [spring-article-java-api] [main] tc.mysql:8                               : Waiting for database connection to become available at jdbc:mysql://127.0.0.1:60871/test using query 'SELECT 1'
+2025-05-30T20:36:13.179+09:00  INFO 15788 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 started in PT19.7984399S
+2025-05-30T20:36:13.180+09:00  INFO 15788 --- [spring-article-java-api] [main] tc.mysql:8                               : Container is started (JDBC URL: jdbc:mysql://127.0.0.1:60871/test)
+2025-05-30T20:36:14.182+09:00 DEBUG 15788 --- [spring-article-java-api] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@e146f93, started on Fri May 30 20:35:49 JST 2025
+2025-05-30T21:05:00.196+09:00  INFO 26464 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : Starting ArticleCreateControllerTest using Java 21.0.6 with PID 26464 (started by namma in E:\PROJECT\article_portfolio\spring-article-java-api\backend)
+2025-05-30T21:05:00.198+09:00  INFO 26464 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : The following 1 profile is active: "${activate}"
+2025-05-30T21:05:00.219+09:00 DEBUG 26464 --- [spring-article-java-api] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@e146f93
+2025-05-30T21:05:03.287+09:00 DEBUG 26464 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2025-05-30T21:05:03.609+09:00 DEBUG 26464 --- [spring-article-java-api] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-30T21:05:03.707+09:00 DEBUG 26464 --- [spring-article-java-api] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-30T21:05:03.824+09:00 DEBUG 26464 --- [spring-article-java-api] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-30T21:05:03.901+09:00  WARN 26464 --- [spring-article-java-api] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 08e06a63-6bc7-4e28-a6a5-132b5bbd67bd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-30T21:05:03.954+09:00  INFO 26464 --- [spring-article-java-api] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-30T21:05:04.371+09:00  INFO 26464 --- [spring-article-java-api] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-05-30T21:05:04.371+09:00  INFO 26464 --- [spring-article-java-api] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-05-30T21:05:04.373+09:00  INFO 26464 --- [spring-article-java-api] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2025-05-30T21:05:04.428+09:00  INFO 26464 --- [spring-article-java-api] [main] c.e.s.c.ArticleCreateControllerTest      : Started ArticleCreateControllerTest in 4.878 seconds (process running for 7.116)
+2025-05-30T21:05:04.496+09:00  INFO 26464 --- [spring-article-java-api] [main] tc.mysql:8                               : Creating container for image: mysql:8
+2025-05-30T21:05:04.605+09:00  INFO 26464 --- [spring-article-java-api] [main] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2025-05-30T21:05:04.622+09:00  INFO 26464 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
+2025-05-30T21:05:04.899+09:00  INFO 26464 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: 927eeb9226f199473064b50a78b93a7364acf5b17f6f27f219652d565713dd95
+2025-05-30T21:05:05.671+09:00  INFO 26464 --- [spring-article-java-api] [main] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT1.0496863S
+2025-05-30T21:05:05.916+09:00  INFO 26464 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 is starting: 946ee8689591663118c7f6b0adfaa8211c31024be69e419049b8a4b3ab616b43
+2025-05-30T21:05:06.404+09:00  INFO 26464 --- [spring-article-java-api] [main] tc.mysql:8                               : Waiting for database connection to become available at jdbc:mysql://127.0.0.1:61221/test using query 'SELECT 1'
+2025-05-30T21:05:25.480+09:00  INFO 26464 --- [spring-article-java-api] [main] tc.mysql:8                               : Container mysql:8 started in PT20.9840974S
+2025-05-30T21:05:25.481+09:00  INFO 26464 --- [spring-article-java-api] [main] tc.mysql:8                               : Container is started (JDBC URL: jdbc:mysql://127.0.0.1:61221/test)
+2025-05-30T21:05:26.463+09:00 DEBUG 26464 --- [spring-article-java-api] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@e146f93, started on Fri May 30 21:05:00 JST 2025

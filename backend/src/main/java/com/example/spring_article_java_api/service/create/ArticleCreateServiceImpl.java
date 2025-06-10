@@ -4,7 +4,7 @@ import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 
 import com.example.spring_article_java_api.dto.request.ArticleDetailCreateRequestDto;
-import com.example.spring_article_java_api.dto.response.ArticleDetailResponseDto;
+import com.example.spring_article_java_api.dto.response.ArticleDetailCreateResponseDto;
 import com.example.spring_article_java_api.entity.Article;
 import com.example.spring_article_java_api.exception.ArticleCreateException;
 import com.example.spring_article_java_api.repository.ArticleRepository;
@@ -21,21 +21,19 @@ public class ArticleCreateServiceImpl implements ArticleCreateService {
     ArticleRepository repository;
 
     @Transactional
-    public ArticleDetailResponseDto createArticle(ArticleDetailCreateRequestDto dto) throws ArticleCreateException{
+    public ArticleDetailCreateResponseDto createArticle(ArticleDetailCreateRequestDto dto) throws ArticleCreateException{
 
         //Entityに登録する値を設定する
         Article article = new Article(dto.getTitle(), dto.getUserId(), dto.getContent(), dto.isReleaseFlg(),dto.getUserId());
-        //設定した値で登録する
         try {
-            Article result = repository.save(article);
-            ArticleDetailResponseDto responseDto = ArticleDetailResponseDto.builder()
-                                        .title(result.getTitle())
-                                        .content(result.getContent())
-                                        .releaseFlg(result.isReleaseFlg())
-                                        .createdAt(result.getCreatedAt())
-                                        .updatedAt(result.getUpdatedAt())
-                                        .build();
             //保存処理
+            Article result = repository.save(article);
+            //返却用responseDtoを設定
+            ArticleDetailCreateResponseDto responseDto = ArticleDetailCreateResponseDto.builder()
+                                        .userId(result.getUserId())
+                                        .articleId(result.getId())
+                                        .build();
+            //値を返却する
             return responseDto;
         } catch (IllegalArgumentException e) {
             //DBでエラーが発生した場合

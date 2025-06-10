@@ -5,12 +5,15 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /***
  * 記事更新用DTO
  * 記事の更新情報を保持する
  */
+@RequiredArgsConstructor
 @Getter
+@Builder
 public class ArticleDetailUpdateRequestDto {
 
     /***
@@ -49,22 +52,4 @@ public class ArticleDetailUpdateRequestDto {
      */
     private final boolean deleteFlg;
 
-    /***
-     * 初期設定用コンストラクタ
-     * @param articleId
-     * @param userId
-     * @param title
-     * @param content
-     * @param releaseFlg
-     * @param deleteFlg
-     */
-    @Builder
-    public ArticleDetailUpdateRequestDto(Long articleId, Long userId, String title, String content, boolean releaseFlg, boolean deleteFlg){
-      this.articleId = articleId;
-      this.userId = userId;
-      this.title = title;
-      this.content = content;
-      this.releaseFlg = releaseFlg;
-      this.deleteFlg = deleteFlg;
-    }
 }

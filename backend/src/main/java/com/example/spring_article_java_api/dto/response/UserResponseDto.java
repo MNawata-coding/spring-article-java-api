@@ -4,18 +4,21 @@ import com.example.spring_article_java_api.constant.EnumList.ROLE;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /***
  * ユーザー情報取得DTO
  * 基本的なユーザー情報を保持する
  */
+@RequiredArgsConstructor
 @Getter
+@Builder
 public class UserResponseDto {
 
     /***
      * ユーザーID
      */
-    private final int userId;
+    private final long userId;
 
     /***
      * ユーザー名
@@ -32,18 +35,4 @@ public class UserResponseDto {
      */
     private final ROLE role;
 
-    /***
-     * 初期設定用コンストラクタ
-     * @param userId
-     * @param name
-     * @param email
-     * @param role
-     */
-    @Builder
-    public UserResponseDto(int userId, String name, String email, ROLE role){
-        this.userId = userId;
-        this.name = name;
-        this.email = email;
-        this.role = role;
-    }
 }

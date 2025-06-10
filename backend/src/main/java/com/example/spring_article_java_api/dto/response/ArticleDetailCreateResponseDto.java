@@ -1,28 +1,25 @@
 package com.example.spring_article_java_api.dto.response;
 
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /***
- * 記事一覧用DTO
- * 記事のIDとタイトルを保持する
+ * 記事作成後返却DTO
  */
 @RequiredArgsConstructor
 @Getter
 @Builder
-public class ArticleInfoResponseDto {
-
+public class ArticleDetailCreateResponseDto {
+    
     /***
      * 記事ID
-     * 記事URLに使用する
      */
     private final long articleId;
 
     /***
-     * 記事のタイトル
+     * ユーザーID
      */
-    private final String title;
+    private final long userId;
 
 }

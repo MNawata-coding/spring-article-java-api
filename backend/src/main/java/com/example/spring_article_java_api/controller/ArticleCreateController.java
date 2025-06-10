@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.spring_article_java_api.dto.request.ArticleDetailCreateRequestDto;
-import com.example.spring_article_java_api.dto.response.ArticleDetailResponseDto;
+import com.example.spring_article_java_api.dto.response.ArticleDetailCreateResponseDto;
 import com.example.spring_article_java_api.service.create.ArticleCreateService;
 
 import jakarta.validation.Valid;
@@ -28,8 +28,9 @@ public class ArticleCreateController {
      * @return
      */
     @PostMapping("/save")
-    public ResponseEntity<ArticleDetailResponseDto>  articleSave(@Valid @RequestBody ArticleDetailCreateRequestDto dto){
-        ArticleDetailResponseDto result = service.createArticle(dto);
+    public ResponseEntity<ArticleDetailCreateResponseDto>  articleSave(@Valid @RequestBody ArticleDetailCreateRequestDto dto){
+        ArticleDetailCreateResponseDto result = service.createArticle(dto);
         return ResponseEntity.ok(result);
     }
 }
+ 

@@ -8,19 +8,22 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /***
  * ユーザー情報更新DTO
  * ユーザーの更新情報を保持
  */
+@RequiredArgsConstructor
 @Getter
+@Builder
 public class UserUpdateRequestDto {
 
     /***
      * ユーザーID
      */
     @Min(0)
-    private final Long id;
+    private final long id;
 
     /***
      * ユーザー名
@@ -43,18 +46,4 @@ public class UserUpdateRequestDto {
     @NotNull
     private final ROLE role;
 
-    /***
-     * 初期設定用コンストラクタ
-     * @param id
-     * @param name
-     * @param email
-     * @param role
-     */
-    @Builder
-    public UserUpdateRequestDto(Long id, String name, String email, ROLE role){
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.role = role;
-    }
 }
